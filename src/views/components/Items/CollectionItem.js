@@ -1,19 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
 
-
-function Nav() {
-    
+const CollectionItem = () => {
     return (
         <Container>
-            Nav
+            CollectionItem
         </Container>
     )
 }
 
-
 const Container = styled.div`
-    
+
 `;
 
-export default Nav;
+export default CollectionItem;

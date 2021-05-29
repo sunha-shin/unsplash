@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Tools = () => {
+
+function Tools() {
+    
     return (
         <Container>
             Tools
@@ -9,8 +11,9 @@ const Tools = () => {
     )
 }
 
-const Container = styled.div`
 
+const Container = styled.div`
+    
 `;
 
 export default Tools;

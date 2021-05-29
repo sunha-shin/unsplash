@@ -1,19 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
 
-
-function Nav() {
-    
+const MasonryList = ({data}) => {
     return (
         <Container>
-            Nav
+            MasonryList
         </Container>
     )
 }
 
-
 const Container = styled.div`
-    
+
 `;
 
-export default Nav;
+export default MasonryList;

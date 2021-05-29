@@ -5,11 +5,12 @@ import SearchBox from "../SearchBox";
 import Nav from "./Nav";
 import Tools from "./Tools";
 
-const Header = () => {
+// Global navigation bar
+const Gnb = () => {
     return (
         <Container>
             <Logo/>
-            <SearchBox/>
+            <SearchBox shape={"round"}/>
             <Nav/>
             <Tools/>
         </Container>
@@ -17,12 +18,11 @@ const Header = () => {
 }
 
 const Container = styled.div`
-  display: flex;
-  align-items: center;
+  display:flex;
+  align-items:center;
   height: 62px;
-  padding: 0 28px;
-  background: #fff;
+  padding: 0 20px;
+  background:#fff;
 `;
 
-
-export default Header;
+export default Gnb;

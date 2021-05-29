@@ -2,11 +2,13 @@ import React from 'react'
 import styled from 'styled-components';
 
 
-function Nav() {
+function Search({match}) {
+
+    const query = match.params.query;
     
     return (
         <Container>
-            Nav
+            {query}
         </Container>
     )
 }
@@ -16,4 +18,4 @@ const Container = styled.div`
     
 `;
 
-export default Nav;
+export default Search;

@@ -2,7 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 import {LogoIcon} from "../../../icons";
 
-const Logo = () => {
+
+function Logo() {
+
     return (
         <Container>
             <LogoIcon/>
@@ -14,23 +16,26 @@ const Logo = () => {
     )
 }
 
+
 const Container = styled.div`
-  display: flex;;
+    display:flex;
+    margin-right: 16px;
 `;
 
-const Text = styled.div`
-  margin-left: 10px;
+const Text = styled.h1`
+    margin-left: 10px;
     .title {
-      font-size: 15px;
-      color: #111;
-      font-weight: bold;
-      display: flex;
+        font-size: 15px;
+        color:#111;
+        font-weight:bold;
+        display:block;
     }
-  .desc {
-    font-size: 13px;
-    color: #111;
-    font-weight: 400;
-    margin-top: 3px;
-  }
+    .desc {
+        font-size: 13px;
+        color:#111;
+        font-weight: 400;
+        margin-top: 3px;
+    }
 `;
+
 export default Logo;
