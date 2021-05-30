@@ -43,20 +43,20 @@ const Container = styled.div`
 `;
 
 const Form = styled.form`
-  height: 38px;
   display: flex;
   align-items: center;
   padding: 0 14px;
 
   .round & {
     height: 38px;
+    background: #eee;
     border-radius: 19px;
   }
 
   .square & {
     height: 54px;
     background: #fff;
-    border-radius: 19px;
+    border-radius: 6px;
   }
 `;
 

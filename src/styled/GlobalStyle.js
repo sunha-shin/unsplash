@@ -58,5 +58,13 @@ export const GlobalStyle = createGlobalStyle`
         max-width: 100%;
         vertical-align:top;
     }
+    
+    .highlight {
+      opacity: 0.7;
+      transition: 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+    }
 `;
 
