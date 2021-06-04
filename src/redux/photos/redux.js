@@ -1,6 +1,6 @@
 const initialState = {
-    photos: [],
-    photoDetail: {},
+    list: [],
+    photoById: {}
 }
 
 export const Action = {
@@ -17,7 +17,7 @@ export const Action = {
             payload
         }),
         setPhotos: (payload) => {
-            return  {
+            return {
                 type: Action.Types.SET_PHOTOS,
                 payload
             }
@@ -36,7 +36,8 @@ export const Action = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        default: return state;
+        default:
+            return state;
         case Action.Types.SET_PHOTOS: {
             return {
                 ...state,

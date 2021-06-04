@@ -1,21 +1,26 @@
 import React from 'react'
 import styled from 'styled-components';
+import {Route} from "react-router-dom";
+import SearchLnb from "../components/Header/SearchLnb";
 
 
 function Search({match}) {
 
     const query = match.params.query;
-    
+
     return (
-        <Container>
-            {query}
-        </Container>
+        <>
+            <Route exact path={'/search/:category/:query'} component={SearchLnb}/>
+            <Container>
+                {query}
+            </Container>
+        </>
     )
 }
 
 
 const Container = styled.div`
-    
+
 `;
 
 export default Search;

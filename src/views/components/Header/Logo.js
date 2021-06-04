@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 import {LogoIcon} from "../../../icons";
-
+import {navigate} from "../../../lib/history";
 
 function Logo() {
 
     return (
-        <Container>
+        <Container onClick={() => navigate('/')}>
             <LogoIcon/>
             <Text>
                 <span className="title">Unsplash</span>

@@ -5,7 +5,7 @@ import searchSaga from './search/saga';
 import topicsSaga from './topics/saga';
 
 function* sagas() {
-    yield all([
+    yield all([ // 병렬 --> 한꺼번에 동시에 시작
         fork(appSaga),
         fork(photosSaga),
         fork(searchSaga),

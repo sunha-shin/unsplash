@@ -9,6 +9,9 @@ const rootReducer = combineReducers({
     photos: photosReducer,
     search: searchReducer,
     topics: topicsReducer
+    // state
+    // key: --> name of next state
+    // vale --> value of next state
 })
 
 export default rootReducer;

@@ -20,7 +20,7 @@ function SearchBox({shape}) {
     }
 
     return (
-        <Container classNames={cn("SearchBox", shape)}>
+        <Container className={cn("SearchBox", shape)}>
             <Form onSubmit={onSubmit}>
                 <Button>
                     <SearchIcon/>

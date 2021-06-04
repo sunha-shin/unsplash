@@ -1,12 +1,15 @@
 const initialState = {
-    list:[]
+    list: [],
+    topicById:{}
 }
 
 export const Action = {
     Types: {
         UPDATE_STATE: 'TOPICS/UPDATE_STATE',
         GET_TOPICS: 'TOPICS/GET_TOPICS',
-        SET_TOPICS: 'TOPICS/SET_TOPICS'
+        SET_TOPICS: 'TOPICS/SET_TOPICS',
+        GET_TOPIC_BY_ID: 'TOPICS/GET_TOPIC_BY_ID',
+        SET_TOPIC_BY_ID: 'TOPICS/SET_TOPIC_BY_ID',
     },
 
     Creators: {
@@ -21,6 +24,15 @@ export const Action = {
         setTopics: (payload) => ({
             type: Action.Types.SET_TOPICS,
             payload
+        }),
+        getTopicById:(slug, data) => ({
+            type:Action.Types.GET_TOPIC_BY_ID,
+            slug,
+            data
+        }),
+        setTopicById:(data) => ({
+            type:Action.Types.SET_TOPIC_BY_ID,
+            data
         })
     }
 }
@@ -42,8 +54,14 @@ const reducer = (state = initialState, action) => {
                 list: action.payload
             }
         }
-    }
+        case Action.Types.SET_TOPIC_BY_ID : {
+            return {
+                ...state,
+                topicById: action.data
+            }
+        }
 
+    }
 }
 
 export default reducer;

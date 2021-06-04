@@ -8,7 +8,7 @@ export const Action = {
     },
 
     Creators: {
-        updateState:(props) => ({
+        updateState:(props) => ({ // local data 관리할때 쓰는 action
             type: Action.Types.UPDATE_STATE,
             props
         })
@@ -23,9 +23,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.props
+                // object --> key와 value
+                // ex) popup:true, sidebar: false, photos:[]
             }
         }
     }
+
 }
 
 export default reducer;

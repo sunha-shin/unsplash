@@ -1,16 +1,15 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components';
-import GridList from "../components/PhotoList/GridList";
-import PhotoItem from "../components/Items/PhotoItem";
 import {useDispatch, useSelector} from "react-redux";
 import {Action} from "../../redux/photos/redux";
 import {CLIENT_ID} from "../../constants";
-
+import {ContentContainer} from "../components/Layout/Layout.Styled";
+import MasonryList from "../components/PhotoList/MasonryList";
 
 const MainListContainer = () => {
 
     const dispatch = useDispatch();
-    const state = useSelector(state => state.photos.list);
+    const list = useSelector(state => state.photos.list);
 
     useEffect(() => {
         getPhotos()
@@ -24,15 +23,15 @@ const MainListContainer = () => {
         }))
     };
 
-    const renderItem = (item) => <PhotoItem item={item}/>;
+    //const renderItem = (item) => <PhotoItem item={item}/>;
     return (
-        <Container>
-            <GridList data={[]}
-                      renderItem={renderItem}
-            />
-        </Container>
+        <ContentContainer>
+            <MasonryList data={list}/>
+        </ContentContainer>
     )
 }
+
+
 
 const Container = styled.div`
 
