@@ -1,11 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from 'styled-components';
-import {ArrowRightIcon} from "../../../icons";
+import {ArrowLeftIcon, ArrowRightIcon} from "../../../icons";
+import {DefaultButton} from "../Button/Button.Styled";
+import cn from 'classnames';
 
-const ScrollMenu = ({
-                        data = [], renderItem = () => {
-    }
-                    }) => {
+const ScrollMenu = ({data = [], renderItem = () => {} }) => {
 
     const [scrollLeft, setScrollLeft] = useState(0);
     const [maxScroll, setMaxScroll] = useState(1);
@@ -26,8 +25,8 @@ const ScrollMenu = ({
         setMaxScroll(maxScroll);
     };
 
-    const start = scrollLeft < 0;
-    const end = scrollLeft > maxScroll;
+    const start = scrollLeft <= 0;
+    const end = scrollLeft >= maxScroll;
 
     const onClickLeft = () => {
         if (trackRef.current) {
@@ -39,19 +38,19 @@ const ScrollMenu = ({
         if (trackRef.current) {
             trackRef.current.scrollLeft = Math.min(maxScroll, trackRef.current.scrollLeft + 400);
         }
-
     };
 
     return (
-        <Container>
+        <Container className={cn("ScrollMenu", {start, end})}>
             {
                 !start &&
                 <ButtonLeft onClick={onClickLeft}>
-                    <ArrowRightIcon/>
+                    <ArrowLeftIcon/>
                 </ButtonLeft>
             }
             <Track className={"Track"}
                    onScroll={onScroll}
+                   ref={trackRef}
             >
                 {
                     data.map((item, index) => renderItem(item, index))
@@ -73,33 +72,32 @@ const Container = styled.div`
   position: relative;
   padding: 0 30px;
 
-  &::before, &::after {
+  &::after, &::before {
     content: '';
-    position: absolute;
-    left: 0;
+    position: absolute;    
     top: 0;
     bottom: 0;
     width: 200px;
-    pointer -events: none;
+    pointer-events: none;
+    transition: 0.2s;
   }
-
 
   &::before {
     left: 0;
-    background: linear - gradient(270
-    deg, hsla(0, 0 %, 100 %, 0)
-    0, #fff
-    90 %, #fff
-);
+    background: linear-gradient(270deg, hsla(0, 0%, 100%, 0) 0, #fff 90%, #fff);
   }
 
   &::after {
     right: 0;
-    background: linear - gradient(90
-    deg, hsla(0, 0 %, 100 %, 0)
-    0, #fff
-    90 %, #fff
-);;
+    background: linear-gradient(90deg, hsla(0, 0%, 100%, 0) 0, #fff 90%, #fff);
+  }
+  
+  &.start::before {
+    opacity: 0;
+  }
+
+  &.end::after {
+    opacity: 0;
   }
 `;
 
@@ -110,20 +108,24 @@ const Track = styled.div`
 `;
 
 
-const ButtonArrow = styled.button`
+const ButtonArrow = styled(DefaultButton)`
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 100;
   width: 60px;
+  z-index: 100;
 
   &:hover {
     fill: #111;
+    svg {
+      fill: #111;
+    }
   }
 
   svg {
     width: 22px;
     fill: #767676;
+    transition: 0.4s;
   }
 `;
 

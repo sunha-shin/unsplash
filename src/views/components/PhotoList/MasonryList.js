@@ -29,7 +29,7 @@ const MasonryList = ({data}) => {
                     photoGroups.map((photoGroups, groupIndex) => (
                         <Col>
                             {
-                                photoGroups.map((item, i) => (
+                                photoGroups.map((item, index) => (
                                     <ItemContainer>
                                         <PhotoItem item={item}/>
                                     </ItemContainer>

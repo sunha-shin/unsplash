@@ -16,6 +16,7 @@ const PhotoItem = ({item}) => {
 
 const Container = styled.div`
   position: relative;
+  
 `;
 
 const Thumb = styled.div`

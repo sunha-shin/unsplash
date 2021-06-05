@@ -48,11 +48,11 @@ const NavItem = styled.div`
   align-items: center;
   justify-content: center;
   white-space: nowrap; //줄바꿈 방지
-  padding: 0 12px;
+  margin: 0 12px;
   height: 56px;
   color: #767676;
   cursor: pointer;
-  
+  border-bottom: 2px solid transparent;
 
   &:hover,
   &.isActive {
@@ -60,7 +60,7 @@ const NavItem = styled.div`
   }
   
   &.isActive {
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #111;
   }
 `;
 export default TopicLnb;

@@ -7,7 +7,8 @@ const SearchLnb = ({match}) => {
 
     const {query, category} = match.params;
 
-        const menuData = [['photos', <SearchIcon/>], ['collections', <SearchIcon/>], ['users', <SearchIcon/>]]
+    const menuData = [['photos', <SearchIcon/>], ['collections', <SearchIcon/>], ['users', <SearchIcon/>]]
+    //
 
     const getMenus = (data) => {
         return data.map(item => ({
@@ -26,8 +27,8 @@ const SearchLnb = ({match}) => {
             {
                 menus.map((item, index) => (
                     <NavItem key={index} onClick={() => navigate(item.to)}>
-                        {item.icon}
-                        {item.name}
+                            {item.icon}
+                            {item.name}
                     </NavItem>
                 ))
             }
@@ -40,7 +41,7 @@ const Container = styled.div`
 `;
 
 const NavItem = styled.div`
-    
+
 `;
 
 export default SearchLnb;

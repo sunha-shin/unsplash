@@ -12,7 +12,7 @@ function Search({match}) {
         <>
             <Route exact path={'/search/:category/:query'} component={SearchLnb}/>
             <Container>
-                {query}
+                <h1>{query}</h1>
             </Container>
         </>
     )
