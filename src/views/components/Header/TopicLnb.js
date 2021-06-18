@@ -8,7 +8,6 @@ import cn from 'classnames'
 
 // Topic local navigation bar
 const TopicLnb = () => {
-
     const location = useLocation();
     const list = useSelector(state => state.topics.list);
 
@@ -58,7 +57,7 @@ const NavItem = styled.div`
   &.isActive {
     color: #111;
   }
-  
+
   &.isActive {
     border-bottom: 2px solid #111;
   }

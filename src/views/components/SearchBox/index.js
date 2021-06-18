@@ -4,7 +4,6 @@ import {useHistory} from 'react-router-dom';
 import {SearchIcon} from "../../../icons";
 import cn from "classnames";
 
-
 function SearchBox({shape}) {
 
     const [value, setValue] = useState('');
@@ -72,7 +71,6 @@ const Button = styled.button`
 
     .square & {
       width: 24px;
-
     }
   }
 `;

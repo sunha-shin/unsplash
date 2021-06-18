@@ -4,7 +4,7 @@ import {ArrowLeftIcon, ArrowRightIcon} from "../../../icons";
 import {DefaultButton} from "../Button/Button.Styled";
 import cn from 'classnames';
 
-const ScrollMenu = ({data = [], renderItem = () => {} }) => {
+const ScrollMenu = ({data = [], renderItem = () => {}, style}) => {
 
     const [scrollLeft, setScrollLeft] = useState(0);
     const [maxScroll, setMaxScroll] = useState(1);
@@ -41,7 +41,7 @@ const ScrollMenu = ({data = [], renderItem = () => {} }) => {
     };
 
     return (
-        <Container className={cn("ScrollMenu", {start, end})}>
+        <Container className={cn("ScrollMenu", {start, end})} style={style}>
             {
                 !start &&
                 <ButtonLeft onClick={onClickLeft}>
@@ -50,8 +50,7 @@ const ScrollMenu = ({data = [], renderItem = () => {} }) => {
             }
             <Track className={"Track"}
                    onScroll={onScroll}
-                   ref={trackRef}
-            >
+                   ref={trackRef}>
                 {
                     data.map((item, index) => renderItem(item, index))
                 }

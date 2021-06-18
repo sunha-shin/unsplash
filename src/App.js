@@ -6,17 +6,23 @@ import Search from "./views/pages/Search";
 import {GlobalStyle} from "./styled/GlobalStyle";
 import HeaderContainer from "./views/containers/HeaderContainer";
 import TopicByID from "./views/pages/TopicByID";
+import PopupContainer from "./views/containers/PopupContainer";
+import PhotoById from "./views/pages/PhotoById";
+import User from "./views/pages/User";
 
 function App() {
 
     return (
-        <Container>
+        <Container className={"App"}>
             <GlobalStyle/>
+            <PopupContainer/>
             <HeaderContainer/>
             <Switch>
                 <Route exact path={"/"} component={Home}/>
                 <Route exact path={"/search/:category/:query"} component={Search}/>
+                <Route exact path={"/photos/:id"} component={PhotoById}/>
                 <Route exact path={"/topics/:slug"} component={TopicByID}/>
+                <Route exact path={"/:username"} component={User}/>
             </Switch>
         </Container>
     )
@@ -24,7 +30,7 @@ function App() {
 
 
 const Container = styled.div`
-
+  
 `;
 
 export default App;

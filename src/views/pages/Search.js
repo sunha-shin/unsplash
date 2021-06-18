@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import {Route} from "react-router-dom";
 import SearchLnb from "../components/Header/SearchLnb";
+import MasonryList from "../components/PhotoList/MasonryList";
+import SearchContainer from "../containers/SearchContainer";
 
 
 function Search({match}) {
@@ -10,9 +12,8 @@ function Search({match}) {
 
     return (
         <>
-            <Route exact path={'/search/:category/:query'} component={SearchLnb}/>
             <Container>
-                <h1>{query}</h1>
+                <SearchContainer/>
             </Container>
         </>
     )

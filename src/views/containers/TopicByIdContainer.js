@@ -16,7 +16,7 @@ const TopicByIdContainer = ({match}) => {
 
     const getTopicById = () => {
         dispatch(TopicsAction.Creators.getTopicById(slug, {
-            client_id:CLIENT_ID
+            client_id: CLIENT_ID
         }))
     }
 

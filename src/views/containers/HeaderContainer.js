@@ -6,7 +6,6 @@ import {useDispatch} from "react-redux";
 import {Action as TopicsAction} from "../../redux/topics/redux";
 import {CLIENT_ID} from "../../constants";
 import {Route} from 'react-router-dom';
-import SearchLnb from "../components/Header/SearchLnb";
 
 const HeaderContainer = () => {
 

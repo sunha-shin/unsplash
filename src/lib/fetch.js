@@ -1,6 +1,11 @@
 import axios from 'axios';
 import {API_BASE_URL, CLIENT_ID} from "../constants";
 
+export const RequestConstants ={
+    GET:'get'
+}
+
+
 const config = {
     baseURL: API_BASE_URL
 };
@@ -14,7 +19,7 @@ export const request = (method, url, data) => {
             method
         }
 
-        if (method === 'get') {
+        if (method === RequestConstants.GET) {
             config.params = data;
         } else {
             config.data = data;
@@ -22,7 +27,7 @@ export const request = (method, url, data) => {
 
         //const token = window.localStorage.getItem('access_token');
         if (!!CLIENT_ID) {
-            axiosInstance.defaults.headers.common['Authorization'] = `Client_ID ${CLIENT_ID}`;
+            axiosInstance.defaults.headers.common['Authorization'] = `Client-ID ${CLIENT_ID}`;
         }
 
         return axiosInstance(config);

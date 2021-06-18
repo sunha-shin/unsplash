@@ -76,6 +76,10 @@ export const GlobalStyle = createGlobalStyle`
     display: none; /* Chrome, Safari, Opera*/
   }
     
-
+  a {
+    text-decoration: none;
+    color: #767676;
+  }
+  
 `;
 

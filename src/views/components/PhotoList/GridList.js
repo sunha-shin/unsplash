@@ -24,12 +24,13 @@ const Container = styled.div`
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -10px;
+  margin: 0 -12px;
 `;
 
 const Col = styled.div`
-  padding: 10px;
+  padding: 12px;
   width: 33.3333%;
+  margin-bottom: 24px;
 `;
 
 export default GridList;
