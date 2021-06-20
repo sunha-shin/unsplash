@@ -7,16 +7,16 @@ import cn from 'classnames';
 
 const PhotoInfo = ({data}) => {
 
-    const [zoomIn, setZoomIn] = useState();
+    const [zoomIn, setZoomIn] = useState(false);
 
     const {
         urls,
+        width,
+        height,
+        color,
         user: {
             profile_image,
-            width,
-            height,
             name,
-            color,
             username,
             for_hire
         },
@@ -38,30 +38,32 @@ const PhotoInfo = ({data}) => {
                     forHire={for_hire}
                 />
                 <ButtonGroup>
-                    <IconButton iconWidth={15}
-                                iconHeight={15}
+                    <IconButton
+                        iconWidth={15}
+                        iconHeight={15}
                     >
                         <HeartIcon/>
                     </IconButton>
-                    <IconButton iconWidth={16}
-                                iconHeight={16}
+                    <IconButton
+                        iconWidth={16}
+                        iconHeight={16}
                     >
                         <PlusIcon/>
                     </IconButton>
                 </ButtonGroup>
-
             </Head>
-            <Body className={cn(zoomIn)}>
-                <ImageBox style={{}}>
-                    <Image onClick={() => setZoomIn(v => !v)}>
-                        <img src={data.urls?.full} alt={data.alt_description || ""}/>
-                        <ButtonZoom className={"btn-zoom"}>
-                            {
-                                zoomIn ? <ZoomInIcon/> : <ZoomOutIcon/>
-                            }
-                        </ButtonZoom>
-                    </Image>
-                </ImageBox>
+            <Body className={cn({zoomIn})}>
+                <Image onClick={() => setZoomIn(v => !v)}>
+                    <ImageBox style={imageBoxStyle}>
+                        <img src={data.urls?.full}
+                             alt={data.alt_description || ""}/>
+                    </ImageBox>
+                    <ButtonZoom className={"btn-zoom"}>
+                        {
+                            zoomIn ? <ZoomOutIcon/> : <ZoomInIcon/>
+                        }
+                    </ButtonZoom>
+                </Image>
             </Body>
             <Detail>
 
@@ -99,9 +101,24 @@ const Detail = styled.div`
 
 `;
 
+const ImageBox = styled.div`
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
 const Image = styled.div`
   position: relative;
   max-width: 70%;
+  width: 100%;
   cursor: zoom-in;
 
   &:hover {
@@ -115,40 +132,23 @@ const Image = styled.div`
   }
 
   .zoomIn & {
-    max-width: 100% !important;
+    max-width: 100%!important;
     cursor: zoom-out;
   }
+
 `;
 
-const ImageBox = styled.div`
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-  }
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
 
 const ButtonZoom = styled.div`
-  position: relative;
+  position: absolute;
+  right: 20px;
   top: 20px;
-  left: 20px;
   opacity: 0;
   transition: 0.2s;
 
   svg {
     fill: #fff;
   }
-
 
 `;
 

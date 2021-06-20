@@ -7,7 +7,8 @@ const PhotoItem = ({item, onClick}) => {
     const {photos, collections, users, related_searches} = useSelector(state => state.search);
 
     const thumbStyle = {
-        paddingBottom: item.height / item.width * 100 + '%'
+        paddingBottom: item.height / item.width * 100 + '%',
+        backgroundColor: item.color
     };
 
     return (
@@ -28,10 +29,15 @@ const Container = styled.div`
 `;
 
 const Thumb = styled.div`
-
+    
   img {
     width: 100%;
     object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
 `;
 

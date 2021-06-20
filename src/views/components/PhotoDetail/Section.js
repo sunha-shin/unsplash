@@ -19,7 +19,9 @@ const Title = styled.div`
   font-size: 18px;
   color: #111;
   margin-bottom: 25px;
-  
+  .photos & {
+    margin-bottom: 15px;
+  }
 `;
 
 export default Section;

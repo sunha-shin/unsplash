@@ -48,7 +48,7 @@ const UserItem = ({item}) => {
                         <ButtonHire onClick={(e) => {
                             e.stopPropagation();
                         }}>
-                            <ButtonHire>Hire</ButtonHire>
+                            Hire
                         </ButtonHire>
                     }
                 </ButtonGroup>
@@ -178,7 +178,7 @@ const ButtonView = styled(DefaultButton)`
   height: 32px;
   font-size: 14px;
   color: #767676;
-  
+
 `;
 
 export default UserItem;

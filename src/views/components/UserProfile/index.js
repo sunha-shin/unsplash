@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import {TextEllipsis} from "../../../lib/styled";
 
 const UserProfile = ({profileImage, name, username, for_hire}) => {
+
     return (
         <Container>
-
                 <Avatar>
-                    <img src={profileImage?.medium} alt={`Avatar of user ${name}`}/>
+                    <img src={profileImage} alt={`Avatar of user ${name}`}/>
                 </Avatar>
                 <Info>
                     <div className="name">{name}</div>
@@ -45,15 +45,15 @@ const Info = styled.div`
   overflow: hidden;
 
   .name {
-    font-size: 18px;
+    font-size: 15px;
     color: #111;
     font-weight: bold;
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     ${TextEllipsis};
   }
 
   .username {
-    font-size: 15px;
+    font-size: 11px;
     color: #767676;
   }
 `;

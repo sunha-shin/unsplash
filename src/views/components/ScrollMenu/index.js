@@ -22,7 +22,7 @@ const ScrollMenu = ({data = [], renderItem = () => {}, style}) => {
         const clientWidth = event.target.clientWidth;
         const maxScroll = scrollWidth - clientWidth;
         setScrollLeft(scrollLeft);
-        setMaxScroll(maxScroll);
+        setMaxScroll(maxScroll);    // scrollLeft의 maxScroll
     };
 
     const start = scrollLeft <= 0;
@@ -105,7 +105,6 @@ const Track = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
 `;
-
 
 const ButtonArrow = styled(DefaultButton)`
   position: absolute;
