@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import SearchContainer from "../containers/SearchContainer";
 
-function Search({match}) {
-
-    const query = match.params.query;
+function Search() {
 
     return (
         <>

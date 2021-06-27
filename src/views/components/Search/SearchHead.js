@@ -5,9 +5,10 @@ import {navigate} from "../../../lib/history";
 
 const SearchHead = ({query, related_searches}) => {
 
-    const renderItem = ({title}) => <NavItem onClick={() => navigate(`/search/photos/${title}`)}>
-        {title}
-    </NavItem>;
+    const renderItem = ({title}) => (
+        <NavItem onClick={() => navigate(`/search/photos/${title}`)}>
+            {title}
+        </NavItem>);
 
     return (
         <Container>
@@ -37,19 +38,19 @@ const Title = styled.h1`
 const NavItem = styled.div`
   width: 143px;
   padding: 13px;
-  
+
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
+
   flex-shrink: 0;
   border: 1px solid #d1d1d1;
   color: #767676;
   border-radius: 2px;
   text-align: center;
   cursor: pointer;
-  
+
   transition: 0.3s;
   text-transform: capitalize;
 

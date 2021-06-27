@@ -1,36 +1,42 @@
 const initialState = {
-    photos:{
-        results:[]
+    photos: {
+        results: []
     },
-    collections:{
-        results:[]
+    collections: {
+        results: []
     },
-    users:{
-        results:[]
+    users: {
+        results: []
     },
-    related_searches:[]
+    related_searches: []
 }
 
 export const Action = {
     Types: {
         UPDATE_STATE: 'SEARCH/UPDATE_STATE',
-        SEARCH_PHOTOS:'SEARCH_PHOTOS',
-        SET_SEARCH_RESULT:'SET_SEARCH_RESULT'
+        SEARCH_PHOTOS: 'SEARCH_PHOTOS',
+        SEARCH_PHOTOS_MORE: 'SEARCH_PHOTOS_MORE',
+        SET_SEARCH_RESULT: 'SET_SEARCH_RESULT'
     },
 
     Creators: {
-        updateState:(props) => ({
+        updateState: (props) => ({
             type: Action.Types.UPDATE_STATE,
             props
         }),
-        searchPhotos:(payload) => ({
-            type:Action.Types.SEARCH_PHOTOS,
+        searchPhotos: (payload) => ({
+            type: Action.Types.SEARCH_PHOTOS,
             payload
         }),
-        setSearchResult:(payload) => ({
-            type:Action.Types.SET_SEARCH_RESULT,
+        searchPhotosMore: (payload,category) => ({
+            type:Action.Types.SEARCH_PHOTOS_MORE,
+            payload,
+            category
+        }),
+        setSearchResult: (payload) => ({
+            type: Action.Types.SET_SEARCH_RESULT,
             payload
-        })
+        }),
     }
 }
 
@@ -48,6 +54,8 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 ...action.payload
+                // object들을 search안에 넣기
+                // multiple object 받을 때 spread operator
             }
         }
     }

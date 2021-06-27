@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import ReactDOM from 'react-dom';
 import PhotoDetail from "../components/PhotoDetail";
@@ -36,8 +36,9 @@ const PopupContainer = () => {
                 onClick={onClose}/>
             <PopupContents className={"PopupContents"}>
                 <Track className={"Track"}>
-                    <PhotoDetail photoById={photoById[currentPhotoId]}
-                                 photoRelated={photoRelated[currentPhotoId]}
+                    <PhotoDetail
+                        photoById={photoById[currentPhotoId]}
+                        photoRelated={photoRelated[currentPhotoId]}
                     />
                 </Track>
             </PopupContents>

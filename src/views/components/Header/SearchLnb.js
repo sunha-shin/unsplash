@@ -16,7 +16,7 @@ const SearchLnb = ({match}) => {
             isActive: item[0] === category,
             icon: item[1]
         }))
-    }
+    };
 
     const menus = getMenus(menuData);
 

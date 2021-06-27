@@ -52,7 +52,6 @@ const UserItem = ({item}) => {
                         </ButtonHire>
                     }
                 </ButtonGroup>
-
             </Head>
             <PreviewImages>
                 <ul>

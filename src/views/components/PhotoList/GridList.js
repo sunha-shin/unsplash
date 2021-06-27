@@ -1,19 +1,28 @@
 import React from 'react'
 import styled from 'styled-components';
+import IosLoader from "../Loader/IosLoader";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-const GridList = ({data, renderItem}) => {
+const GridList = ({data, renderItem, next, hasMore=true}) => {
     return (
-        <Container>
-            <Row>
-                {
-                    data.map((item, i) => (
-                        <Col key={i}>
-                            {renderItem(item)}
-                        </Col>
-                    ))
-                }
-            </Row>
-        </Container>
+        <InfiniteScroll
+            dataLength={data.length} //This is important field to render the next data
+            next={next}
+            hasMore={!!next && hasMore}
+            loader={<IosLoader/>}
+        >
+            <Container>
+                <Row>
+                    {
+                        data.map((item, i) => (
+                            <Col key={i}>
+                                {renderItem(item)}
+                            </Col>
+                        ))
+                    }
+                </Row>
+            </Container>
+        </InfiniteScroll>
     )
 }
 

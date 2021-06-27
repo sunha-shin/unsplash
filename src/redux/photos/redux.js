@@ -10,6 +10,7 @@ export const Action = {
         UPDATE_STATE: 'UPDATE_STATE',
         GET_PHOTOS: 'GET_PHOTOS',
         SET_PHOTOS: 'SET_PHOTOS',
+        GET_PHOTOS_MORE: 'GET_PHOTOS_MORE',
         GET_PHOTO_BY_ID: 'GET_PHOTO_BY_ID',
         SET_PHOTO_BY_ID: 'SET_PHOTO_BY_ID',
         GET_PHOTO_RELATED: 'GET_PHOTO_RELATED',
@@ -17,7 +18,6 @@ export const Action = {
         GET_PHOTO_DETAIL: 'GET_PHOTO_DETAIL',
         OPEN_PHOTO_POPUP: 'OPEN_PHOTO_POPUP',
     },
-
     Creators: {
         updateState: (props) => ({
             type: Action.Types.UPDATE_STATE,
@@ -25,6 +25,10 @@ export const Action = {
         }),
         getPhotos: (payload) => ({
             type: Action.Types.GET_PHOTOS,
+            payload
+        }),
+        getPhotosMore: (payload) => ({
+            type: Action.Types.GET_PHOTOS_MORE,
             payload
         }),
         setPhotos: (payload) => ({
@@ -65,6 +69,12 @@ const reducer = (state = initialState, action) => {
     switch (action.type) {
         default:
             return state;
+        case Action.Types.UPDATE_STATE: {
+            return {
+                ...state,
+                ...action.props
+            }
+        }
         case Action.Types.SET_PHOTOS: {
             return {
                 ...state,
@@ -80,12 +90,6 @@ const reducer = (state = initialState, action) => {
                 }
             }
         }
-        case Action.Types.UPDATE_STATE: {
-            return {
-                ...state,
-                ...action.props
-            }
-        }
         case Action.Types.SET_PHOTO_RELATED: {
             return {
                 ...state,
@@ -95,6 +99,7 @@ const reducer = (state = initialState, action) => {
                 }
             }
         }
+
     }
 }
 

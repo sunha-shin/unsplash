@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import TopicByIdContainer from "../containers/TopicByIdContainer";
 
-const TopicByID = ({match}) => {
+const TopicByID = () => {
 
         return (
         <Container>

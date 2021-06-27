@@ -14,7 +14,7 @@ function SearchBox({shape}) {
     }
 
     const onSubmit = (event) => {
-        event.preventDefault();
+        // event.preventDefault(); // 새로고침 방지
         history.push(`/search/photos/${value}`);
     }
 

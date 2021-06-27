@@ -4,53 +4,48 @@ import PhotoItem from "../Items/PhotoItem";
 import {composePhotosGroups} from "../../../lib/common";
 import {useDispatch} from "react-redux";
 import {Action} from "../../../redux/photos/redux";
+import IosLoader from "../Loader/IosLoader";
+import InfiniteScroll from "react-infinite-scroll-component";
 
-const MasonryList = ({data}) => {
+const MasonryList = ({data = [], next, hasMore = true}) => {
 
     const photoGroups = composePhotosGroups(data);
 
-    // export const composePhotosGroups = (data) => {
-    //     const groups = [[], [], []];
-    //     const groupsHeight = [0, 0, 0];
-    //
-    //     for (let i = 0; i < data.length; i++) {
-    //         const ratioHeight = data[i].height / data[i].width;
-    //         const minHeight = Math.min(...groupsHeight);
-    //         const minHeightIndex = groupsHeight.indexOf(minHeight);
-    //         groups[minHeightIndex].push(data[i]);
-    //         groupsHeight[minHeightIndex] = groupsHeight[minHeightIndex] + ratioHeight;
-    //     }
-    //
-    //     return groups;
-    // };
-
     const dispatch = useDispatch();
 
-    const  openPhotoPopup = (id) => {
+    const openPhotoPopup = (id) => {
         dispatch(Action.Creators.openPhotoPopup(id))
-        window.history.pushState({}, null,`/photos/${id}`);
+        window.history.pushState({}, null, `/photos/${id}`);
     };
 
+
     return (
-        <Container>
-            <Row>
-                {
-                    photoGroups.map((photoGroups, groupIndex) => (
-                        <Col key={groupIndex}>
-                            {
-                                photoGroups.map((item, index) => (
-                                    <ItemContainer>
-                                        <PhotoItem item={item}
-                                                    key={index}
-                                                   onClick={() => openPhotoPopup(item.id)}/>
-                                    </ItemContainer>
-                                ))
-                            }
-                        </Col>
-                    ))
-                }
-            </Row>
-        </Container>
+        <InfiniteScroll
+            dataLength={data.length} //This is important field to render the next data
+            next={next}
+            hasMore={!!next && hasMore}
+            loader={<IosLoader/>}
+        >
+            <Container>
+                <Row>
+                    {
+                        photoGroups.map((photoGroups, groupIndex) => (
+                            <Col key={groupIndex}>
+                                {
+                                    photoGroups.map((item) => (
+                                        <ItemContainer key={item.id}>
+                                            <PhotoItem item={item}
+                                                       onClick={() => openPhotoPopup(item.id)}/>
+                                        </ItemContainer>
+                                    ))
+                                }
+                            </Col>
+                        ))
+                    }
+                </Row>
+            </Container>
+        </InfiniteScroll>
+
     )
 }
 

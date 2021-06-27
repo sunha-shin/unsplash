@@ -10,7 +10,7 @@ const CollectionItem = ({item}) => {
     } = item;
 
     return (
-        <Container>
+        <Container className={'CollectionsContainer'}>
             <Thumb>
                 <ThumbContents>
                     <Left>
@@ -71,29 +71,12 @@ const ThumbContents = styled.div`
   display: flex;
 `;
 
-const Desc = styled.div`
-  padding: 15px 0 8px;
-
-  h2 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #111;
-    text-transform: capitalize;
-    margin-bottom: 8px;
-  }
-
-  P {
-    font-size: 14px;
-    color: #767676;
-  }
-`;
-
 const Left = styled.div`
   width: 70%;
   padding-right: 2px;
 `;
 
-const Right = styled.div`
+const Right = styled.div`  
   width: 30%;
 `;
 
@@ -116,6 +99,23 @@ const Image = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+`;
+
+const Desc = styled.div`
+  padding: 15px 0 8px;
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+  }
+
+  P {
+    font-size: 14px;
+    color: #767676;
   }
 `;
 export default CollectionItem;
