@@ -42,8 +42,8 @@ const CollectionItem = ({item}) => {
                 </ThumbContents>
             </Thumb>
             <Desc>
-                <h2>beach</h2>
-                <p>Lorem ipsum dolor.</p>
+                <h2>{item.title}</h2>
+                <p>{item.total_photos} photos · Curated by {item.user.name}</p>
             </Desc>
             <Tags data={item.tags}/>
         </Container>

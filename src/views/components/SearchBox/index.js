@@ -38,7 +38,7 @@ function SearchBox({shape}) {
 
 const Container = styled.div`
   flex: 1;
-  margin-right: 50px;
+  //margin-right: 50px;
 `;
 
 const Form = styled.form`

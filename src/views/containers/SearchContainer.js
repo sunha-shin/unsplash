@@ -38,7 +38,8 @@ const SearchContainer = ({match}) => {
     const searchPhotos = () => {
         dispatch(Action.Creators.searchPhotos({
             query,
-            client_id: CLIENT_ID
+            per_page:9,
+            // client_id: CLIENT_ID
         }))
     };
 

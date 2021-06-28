@@ -50,7 +50,7 @@ const Container = styled.div`
   background: #fff;
   padding: 20px 0 70px;
 
-  #popup & {  // popup이라는 id가 잇을떄만 주기
+  #popup & { // popup이라는 id가 잇을떄만 주기
     border-radius: 6px;
     overflow: hidden;
   }

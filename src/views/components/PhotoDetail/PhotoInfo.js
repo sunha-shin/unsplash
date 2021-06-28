@@ -2,15 +2,26 @@ import React, {useState} from 'react'
 import styled from 'styled-components';
 import UserProfile from "../UserProfile";
 import {IconButton} from "../Button/Button.Styled";
-import {HeartIcon, PlusIcon, ZoomInIcon, ZoomOutIcon} from "../../../icons";
+import moment from "moment";
+import {
+    HeartIcon,
+    InfoIcon,
+    LicenseIcon, LocationIcon,
+    PlusIcon,
+    PublishedIcon,
+    ShareIcon,
+    ZoomInIcon,
+    ZoomOutIcon
+} from "../../../icons";
 import cn from 'classnames';
+import {composeFormatNumber} from "../../../lib/common";
+import LocalData from "../../../data";
 
 const PhotoInfo = ({data}) => {
 
     const [zoomIn, setZoomIn] = useState(false);
 
     const {
-        urls,
         width,
         height,
         color,
@@ -20,6 +31,13 @@ const PhotoInfo = ({data}) => {
             username,
             for_hire
         },
+        views,
+        downloads,
+        created_at,
+        location: {
+            title
+        },
+        description,
         alt_description
     } = data;
 
@@ -27,6 +45,9 @@ const PhotoInfo = ({data}) => {
         paddingBottom: height / width * 100 + '%',
         backgroundColor: color
     }
+
+    const formatViews = composeFormatNumber(data.views);
+    const formatDownloads = composeFormatNumber(data.downloads);
 
     return (
         <Container>
@@ -66,8 +87,61 @@ const PhotoInfo = ({data}) => {
                 </Image>
             </Body>
             <Detail>
+                <CountHead>
+                    <Count>
+                        <Title>
+                            <h1>views</h1>
+                            <p>{formatViews}</p>
+                        </Title>
+                        <Title>
+                            <h1>downloads</h1>
+                            <p>{formatDownloads}</p>
+                        </Title>
+                    </Count>
+                    <ButtonGroup>
+                        <IconButton
+                            iconWidth={15}
+                            iconHeight={15}
+                        >
+                            <ShareIcon/>
+                            <p>Share</p>
+                        </IconButton>
+                        <IconButton
+                            iconWidth={16}
+                            iconHeight={16}
+                        >
+                            <InfoIcon/>
+                            <p>Info</p>
+                        </IconButton>
+                    </ButtonGroup>
+                </CountHead>
 
+                <CountBody>
+                    {
+                        data.location.title &&
+                        <BodyInfo>
+                            <Icons><LocationIcon/></Icons>
+                            <p>{data.location.title}</p>
+                        </BodyInfo>
+                    }
+                    <BodyInfo>
+                        <Icons><PublishedIcon/></Icons>
+                        <p>Published on {moment(data.created_at).format('MMMM D, YYYY')}</p>
+                    </BodyInfo>
+                    <BodyInfo>
+                        <Icons><LicenseIcon/></Icons>
+                        <p>{LocalData.license}</p>
+                    </BodyInfo>
+                </CountBody>
+                {
+                    description &&
+                    <Desc>
+                        {description}
+                    </Desc>
+                }
             </Detail>
+
+
         </Container>
     )
 }
@@ -86,7 +160,7 @@ const Head = styled.div`
 const ButtonGroup = styled.div`
   display: flex;
   align-items: center;
-
+  
   > * {
     margin-left: 8px;
   }
@@ -95,10 +169,6 @@ const ButtonGroup = styled.div`
 const Body = styled.div`
   display: flex;
   justify-content: center;
-`;
-
-const Detail = styled.div`
-
 `;
 
 const ImageBox = styled.div`
@@ -132,10 +202,9 @@ const Image = styled.div`
   }
 
   .zoomIn & {
-    max-width: 100%!important;
+    max-width: 100% !important;
     cursor: zoom-out;
   }
-
 `;
 
 
@@ -149,7 +218,64 @@ const ButtonZoom = styled.div`
   svg {
     fill: #fff;
   }
+`;
+
+
+const Detail = styled.div`
+  padding: 30px 14px 16px;
+`;
+
+const Count = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
+`;
+
+const CountHead = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Title = styled.div`
+  width: 160px;
+  height: 26px;
+  margin-right: 30px;
+  text-transform: capitalize;
+  
+  h1 {
+    color: #767676;
+    padding-bottom: 8px; 
+  } 
+`;
+
+const CountBody = styled.div`
 
 `;
+
+const BodyInfo = styled.div`
+  display: flex;
+
+  p {
+    color: #767676;
+  }
+`;
+
+const Desc = styled.div`
+  margin-top: 20px;
+`;
+
+const Icons = styled.div`
+  margin-right: 8px;
+  background: #fff;
+  border-radius: 3px;
+  height: 32px;
+
+  svg {
+    fill: #767676;
+  }
+`;
+
 
 export default PhotoInfo;

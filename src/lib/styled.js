@@ -1,4 +1,5 @@
 import {css} from 'styled-components';
+import styled from 'styled-components'
 
 export const TextEllipsis = css`
   white-space: nowrap;
@@ -14,4 +15,10 @@ export const ButtonOutlineEffect = css`
   &:hover {
     border-color: #111;
   }
+`;
+
+export const BarIcon = styled.div`
+  border: 0.5px solid #d1d1d1;
+  margin: 0 15px;
+  height: 32px;
 `;

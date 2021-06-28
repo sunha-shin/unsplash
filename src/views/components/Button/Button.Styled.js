@@ -35,4 +35,9 @@ export const IconButton = styled(DefaultButton)`
     fill: #797979;
     transition: 0.3s;
   }
+  
+  p {
+    margin-left: 6px;
+    color: #767676;
+  }
 `;
