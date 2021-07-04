@@ -16,6 +16,7 @@ import {
 import cn from 'classnames';
 import {composeFormatNumber} from "../../../lib/common";
 import LocalData from "../../../data";
+import {ContentContainer} from "../Layout/Layout.Styled";
 
 const PhotoInfo = ({data}) => {
 
@@ -87,8 +88,8 @@ const PhotoInfo = ({data}) => {
                 </Image>
             </Body>
             <Detail>
-                <CountHead>
-                    <Count>
+                <CountHead className={'CountHead'}>
+                    <Count className={'Count'}>
                         <Title>
                             <h1>views</h1>
                             <p>{formatViews}</p>
@@ -98,7 +99,7 @@ const PhotoInfo = ({data}) => {
                             <p>{formatDownloads}</p>
                         </Title>
                     </Count>
-                    <ButtonGroup>
+                    <ButtonGroup className={'Buttons'}>
                         <IconButton
                             iconWidth={15}
                             iconHeight={15}
@@ -159,8 +160,7 @@ const Head = styled.div`
 
 const ButtonGroup = styled.div`
   display: flex;
-  align-items: center;
-  
+
   > * {
     margin-left: 8px;
   }
@@ -235,7 +235,6 @@ const Count = styled.div`
 const CountHead = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
 `;
 
 const Title = styled.div`
@@ -243,15 +242,15 @@ const Title = styled.div`
   height: 26px;
   margin-right: 30px;
   text-transform: capitalize;
-  
+
   h1 {
     color: #767676;
-    padding-bottom: 8px; 
-  } 
+    padding-bottom: 8px;
+  }
 `;
 
 const CountBody = styled.div`
-
+  line-height: 1.6;
 `;
 
 const BodyInfo = styled.div`
@@ -259,21 +258,27 @@ const BodyInfo = styled.div`
 
   p {
     color: #767676;
+    font-size: 14px;
   }
 `;
 
 const Desc = styled.div`
   margin-top: 20px;
+  line-height: 1.6;
 `;
 
 const Icons = styled.div`
   margin-right: 8px;
   background: #fff;
   border-radius: 3px;
-  height: 32px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   svg {
     fill: #767676;
+    width: 16px;
+    height: 16px;
   }
 `;
 

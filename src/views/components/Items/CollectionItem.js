@@ -5,7 +5,6 @@ import Tags from "../Tags";
 const CollectionItem = ({item}) => {
 
     const {
-        tags,
         preview_photos
     } = item;
 

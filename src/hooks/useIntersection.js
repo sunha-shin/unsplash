@@ -19,7 +19,7 @@ export const useIntersection = () => {
         let observer = new IntersectionObserver(callback, options);
 
         if (ref.current) {
-            observer.observe(ref.current);
+            observer.observe(ref.current);  // observe의 parameter : 관찰대상
         }
 
         return () => {
@@ -27,7 +27,7 @@ export const useIntersection = () => {
                 observer.unobserve(ref.current);
             }
         }
-    }, [])
+    }, [])  // end of useEffect
 
     return [inView, ref]
 };

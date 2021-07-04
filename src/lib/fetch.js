@@ -25,9 +25,10 @@ export const request = (method, url, data) => {
             config.data = data;
         }
 
-        //const token = window.localStorage.getItem('access_token');
-        if (!!CLIENT_ID) {
-            axiosInstance.defaults.headers.common['Authorization'] = `Client-ID ${CLIENT_ID}`;
+        const token = window.localStorage.getItem('access_token');
+
+        if(token) {
+            axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         }
 
         return axiosInstance(config);

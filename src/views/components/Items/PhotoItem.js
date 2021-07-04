@@ -9,7 +9,7 @@ const PhotoItem = ({item, onClick}) => {
     const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-        if(inView) {}
+        if(inView)
         setIsActive(true);
     }, [inView])
 

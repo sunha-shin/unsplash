@@ -9,6 +9,7 @@ import TopicByID from "./views/pages/TopicByID";
 import PopupContainer from "./views/containers/PopupContainer";
 import PhotoById from "./views/pages/PhotoById";
 import User from "./views/pages/User";
+import Auth from "./views/pages/Auth";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <HeaderContainer/>
             <Switch>
                 <Route exact path={"/"} component={Home}/>
+                <Route exact path={"/auth"} component={Auth}/>
                 <Route exact path={"/search/:category/:query"} component={Search}/>
                 <Route exact path={"/photos/:id"} component={PhotoById}/>
                 <Route exact path={"/topics/:slug"} component={TopicByID}/>

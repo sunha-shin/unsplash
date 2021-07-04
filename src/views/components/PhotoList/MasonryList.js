@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import PhotoItem from "../Items/PhotoItem";
 import {composePhotosGroups} from "../../../lib/common";
@@ -10,14 +10,12 @@ import InfiniteScroll from "react-infinite-scroll-component";
 const MasonryList = ({data = [], next, hasMore = true}) => {
 
     const photoGroups = composePhotosGroups(data);
-
     const dispatch = useDispatch();
 
     const openPhotoPopup = (id) => {
-        dispatch(Action.Creators.openPhotoPopup(id))
+        dispatch(Action.Creators.openPhotoPopup(id));
         window.history.pushState({}, null, `/photos/${id}`);
     };
-
 
     return (
         <InfiniteScroll

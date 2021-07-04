@@ -17,9 +17,6 @@ const MainListContainer = () => {
         getPhotos()
     }, [page])
 
-    // useEffect(() => {
-    //     setPage(p => p + 1)
-    // }, [inView])
 
     const getPhotos = () => {
         dispatch(Action.Creators.getPhotos({
@@ -50,7 +47,4 @@ const Container = styled.div`
 
 `;
 
-const Sentinel = styled.div`
-  height: 50px;
-`;
 export default MainListContainer;

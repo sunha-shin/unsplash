@@ -39,7 +39,6 @@ const Container = styled.div`
   .ios-loader .bar {
     width: 3px;
     height: 10px;
-    background: #fff;
     position: absolute;
     left: 44.5%;
     top: 37%;

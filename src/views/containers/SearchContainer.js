@@ -51,14 +51,12 @@ const SearchContainer = ({match}) => {
         }, category))
     };
 
-
     const renderCollectionItem = (item) => <CollectionItem item={item}/>
     const renderUserItem = (item) => <UserItem item={item}/>
 
     const nextPhotos = () => {
         setPage(p => p + 1);
     };
-
 
     return (
         <Container>
