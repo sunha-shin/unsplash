@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components';
 import {Route, Switch} from "react-router-dom";
 import Home from "./views/pages/Home";
@@ -10,8 +10,20 @@ import PopupContainer from "./views/containers/PopupContainer";
 import PhotoById from "./views/pages/PhotoById";
 import User from "./views/pages/User";
 import Auth from "./views/pages/Auth";
+import {LocalStorage} from "./lib/localStorage";
+import {authActions} from "./redux/actinoCreators";
+import MyPage from "./views/pages/MyPage";
 
 function App() {
+
+    useEffect(() => {
+        const token = LocalStorage.accessToken.get();
+        if(token) {
+            authActions.getUserProfile();
+            authActions.setAccessToken(token);
+        }
+    }, [])
+
 
     return (
         <Container className={"App"}>
@@ -24,6 +36,7 @@ function App() {
                 <Route exact path={"/search/:category/:query"} component={Search}/>
                 <Route exact path={"/photos/:id"} component={PhotoById}/>
                 <Route exact path={"/topics/:slug"} component={TopicByID}/>
+                <Route exact path={"/topics/:slug"} component={MyPage}/>
                 <Route exact path={"/:username"} component={User}/>
             </Switch>
         </Container>

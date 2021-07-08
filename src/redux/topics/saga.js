@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 function* getTopicsWorker({payload}) {  //destructuring -- action.payload
     const result = yield call(API.getTopics, payload);
-    console.log("@@ result.data", result.data)
     if (!_.isEmpty(result.data)) {
         yield put(Action.Creators.setTopics(result.data));
     }
@@ -13,7 +12,6 @@ function* getTopicsWorker({payload}) {  //destructuring -- action.payload
 
 function* getTopicByIdWorker({slug, data}) {  //destructuring -- action.payload
     const result = yield call(API.getTopicById, slug, data);
-    console.log("@@ result", result)
     if (!_.isEmpty(result.data)) {
         yield put(Action.Creators.setTopicById(result.data));
     }

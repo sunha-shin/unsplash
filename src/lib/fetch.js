@@ -1,8 +1,9 @@
 import axios from 'axios';
 import {API_BASE_URL, CLIENT_ID} from "../constants";
+import {LocalStorage} from "./localStorage";
 
-export const RequestConstants ={
-    GET:'get'
+export const RequestConstants = {
+    GET: 'get'
 }
 
 
@@ -25,11 +26,10 @@ export const request = (method, url, data) => {
             config.data = data;
         }
 
-        const token = window.localStorage.getItem('access_token');
+        const token = LocalStorage.accessToken.get();
+        axiosInstance.defaults.headers.common['Authorization'] =
+            token ? `Bearer ${token}` : `Client_ID ${CLIENT_ID}`;
 
-        if(token) {
-            axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        }
 
         return axiosInstance(config);
     } catch (err) {

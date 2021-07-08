@@ -7,6 +7,9 @@ const API = {
     getTopics:(data) => request('get', `/topics`, data),
     getTopicById:(id, data) => request('get', `/topics/${id}`, data),
     searchPhotos:(data) => request('get', `/search`, data),
+
+    getUserProfile:() => request('get', `/me`),
+    editUserProfile:(data) => request('put', `/me`, data),
 }
 
 export default API;

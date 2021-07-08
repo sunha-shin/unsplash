@@ -1,17 +1,16 @@
 const initialState = {
-
 }
 
 export const Action = {
     Types: {
-        UPDATE_STATE: 'APP/UPDATE_STATE'
+        UPDATE_STATE: 'APP/UPDATE_STATE',
     },
 
     Creators: {
-        updateState:(props) => ({ // local data 관리할때 쓰는 action
+        updateState: (props) => ({ // local data 관리할때 쓰는 action
             type: Action.Types.UPDATE_STATE,
             props
-        })
+        }),
     }
 }
 
