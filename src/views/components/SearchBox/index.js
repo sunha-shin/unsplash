@@ -73,6 +73,7 @@ const Button = styled.button`
       width: 24px;
     }
   }
+  
 `;
 
 const Label = styled.label`

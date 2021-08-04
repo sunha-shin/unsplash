@@ -8,7 +8,8 @@ export const DefaultButton = styled.button`
   justify-content: center;
   background: transparent;
   cursor: pointer;
-
+  color: #767676;
+  
   &:focus {
     outline: 0
   }
@@ -35,7 +36,7 @@ export const IconButton = styled(DefaultButton)`
     fill: #797979;
     transition: 0.3s;
   }
-  
+
   p {
     margin-left: 6px;
     color: #767676;

@@ -9,7 +9,7 @@ const API = {
     searchPhotos:(data) => request('get', `/search`, data),
 
     getUserProfile:() => request('get', `/me`),
-    editUserProfile:(data) => request('put', `/me`, data),
+    editProfile:(data) => request('put', `/me`, data),
 }
 
 export default API;

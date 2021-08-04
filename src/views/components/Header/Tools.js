@@ -6,15 +6,11 @@ import qs from 'qs';
 import {CLIENT_ID} from "../../../constants";
 import {useSelector} from "react-redux";
 import UserInfo from "../UserInfo";
-import {authActions} from "../../../redux/actinoCreators";
+import {authActions} from "../../../redux/actionCreators";
 
 function Tools() {
 
     const user = useSelector(state => state.auth.user);
-
-    const logout = () => {
-        authActions.logout();
-    };
 
     return (
         <Container>
@@ -22,19 +18,20 @@ function Tools() {
             <BarIcon/>
             {
                 user ? <UserInfo user={user}/> :
-                    <ButtonLogin>
-                        <a href={`https://unsplash.com/oauth/authorize?${qs.stringify({
-                            client_id: CLIENT_ID,
-                            redirect_uri: 'http://localhost:3000/auth',
-                            response_type: 'code',
-                            scope: 'public read_user write_user'
-                        })}`}>
-                            Login
-                        </a>
-                    </ButtonLogin>
+                    <>
+                        <ButtonLogin>
+                            <a href={`https://unsplash.com/oauth/authorize?${qs.stringify({
+                                client_id: CLIENT_ID,
+                                redirect_uri: 'http://localhost:3000/auth',
+                                response_type: 'code',
+                                scope: 'public read_user write_user'
+                            })}`}>
+                                Login
+                            </a>
+                        </ButtonLogin>
+                        <ButtonJoinFree>Join free</ButtonJoinFree>
+                    </>
             }
-
-            <ButtonJoinFree>Join free</ButtonJoinFree>
         </Container>
     )
 }

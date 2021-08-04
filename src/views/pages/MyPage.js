@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import {DefaultButton} from "../components/Button/Button.Styled";
+import {IconButton} from "../components/Button/Button.Styled";
 import { useForm } from "react-hook-form";
-import {authActions} from "../../redux/actinoCreators";
+import {authActions} from "../../redux/actionCreators";
 
 const MyPage = () => {
 
@@ -15,7 +15,7 @@ const MyPage = () => {
         <Container>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <FormGroup>
-                    <label htmlFor="">user name</label>
+                    <label htmlFor="username">user name</label>
                     <input
                         type="text"
                         id={'username'}
@@ -68,8 +68,8 @@ const FormGroup = styled.div`
   }
 `;
 
-const Button = styled(DefaultButton)`
-    
+const Button = styled(IconButton)`
+    color: #111;
 `;
 
 export default MyPage;

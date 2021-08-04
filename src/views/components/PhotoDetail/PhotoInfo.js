@@ -16,7 +16,6 @@ import {
 import cn from 'classnames';
 import {composeFormatNumber} from "../../../lib/common";
 import LocalData from "../../../data";
-import {ContentContainer} from "../Layout/Layout.Styled";
 
 const PhotoInfo = ({data}) => {
 

@@ -14,7 +14,7 @@ function Nav() {
                     <NavItem>{item}</NavItem>
                 ))
             }
-            <NavItem><ViewMoreIcon className={'ViewMoreIcon'}/></NavItem>
+            <NavItem><ViewMoreIcon/></NavItem>
 
         </Container>
     )

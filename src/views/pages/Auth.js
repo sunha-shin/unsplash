@@ -5,7 +5,7 @@ import qs from "qs";
 import {CLIENT_ID, SECRET_KEY} from "../../constants";
 import axios from "axios";
 import {navigate} from "../../lib/history";
-import {authActions} from "../../redux/actinoCreators";
+import {authActions} from "../../redux/actionCreators";
 import {LocalStorage} from "../../lib/localStorage";
 
 const Auth = () => {
@@ -35,7 +35,7 @@ const Auth = () => {
 
             const token = result.data.access_token;
 
-            LocalStorage.accessToken.set(token)
+            LocalStorage.accessToken.set(token);
             authActions.setAccessToken(token);
             authActions.getUserProfile();
 

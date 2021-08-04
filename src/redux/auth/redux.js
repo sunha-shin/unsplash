@@ -54,7 +54,7 @@ const reducer = (state = initialState, action) => {
                 accessToken: action.token
             }
         }
-        case Action.Types.SET_USER_PROFILE : {
+        case Action.Types.SET_USER_PROFILE : { 
             return {
                 ...state,
                 user:action.data

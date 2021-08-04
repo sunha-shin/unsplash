@@ -5,11 +5,9 @@ import SearchContainer from "../containers/SearchContainer";
 function Search() {
 
     return (
-        <>
-            <Container>
-                <SearchContainer/>
-            </Container>
-        </>
+        <Container>
+            <SearchContainer/>
+        </Container>
     )
 }
 

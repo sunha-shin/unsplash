@@ -15,10 +15,10 @@ const Visual = () => {
                 </p>
                 <SearchBox shape={"square"}/>
                 <Trending>
-                    <span>Trending: </span>
+                    <span>Trending : </span>
                     {
                         LocalData.trending.map((item, i) => (
-                            <span key={i} className="highlight">{item}, </span>
+                            <span key={i} className="highlight">{item} &nbsp;</span>
                         ))
                     }
                 </Trending>

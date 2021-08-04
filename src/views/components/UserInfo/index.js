@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import {IconButton} from "../Button/Button.Styled";
-import {authActions} from "../../../redux/actinoCreators";
+import {authActions} from "../../../redux/actionCreators";
+import ProfileImage from "../ProfileImage";
 
 const UserInfo = ({user}) => {
-    console.log("@@ user", user)
 
     const [showPhotos, setShowPhotos] = useState();
     const logout = () => {
@@ -13,20 +13,18 @@ const UserInfo = ({user}) => {
 
     return (
         <Container>
-            <ProfileImage>
-                <img src={user?.profile_image?.medium} alt=""/>
-            </ProfileImage>
+            <ProfileImage size={40} url={user?.profile_image?.medium}/>
             <Name>{user.name}</Name>
             <UserPhotos>
                 <h2 onClick={() => setShowPhotos(v => !v)}>
-                    photos({user.total_photos})
+                    photos({user?.total_photos})
                 </h2>
                 {
                     showPhotos &&
                     <UserPhotosList>
                         {
                             user?.photos?.map?.((item) => (
-                                <div key={item.id} className={'photoItem'}>
+                                <div key={item?.id} className={'photoItem'}>
                                     <img src={item?.urls?.small} alt=""/>
                                 </div>
                             ))
@@ -46,25 +44,11 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const ProfileImage = styled.div`
-  width: 40px;
-  height: 40px;
-
-  img {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-
-
 const Name = styled.div`
   font-size: 16px;
   color: #333;
   font-weight: 600;
   margin-left: 20px;
-
 `;
 
 const UserPhotos = styled.div`
@@ -104,7 +88,7 @@ const UserPhotosList = styled.div`
 `;
 
 const Logout = styled(IconButton)`
-    
+
 `;
 
 

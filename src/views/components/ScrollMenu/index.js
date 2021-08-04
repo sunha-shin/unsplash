@@ -128,7 +128,7 @@ const ButtonArrow = styled(DefaultButton)`
 `;
 
 const ButtonLeft = styled(ButtonArrow)`
-  left: 0;
+  left: 0;  
 `;
 
 const ButtonRight = styled(ButtonArrow)`

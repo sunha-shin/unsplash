@@ -2,28 +2,32 @@ import {call, all, takeLatest, put} from "redux-saga/effects";
 import API from "../../api";
 import {Action} from "./redux";
 import {LocalStorage} from "../../lib/localStorage";
+import {toast} from 'react-toastify';
 
 function* getUserProfileWorker() {
-    const result = yield call(API.getUserProfile)
-    console.log("@@ result", result)
-    if (result.data) {
-        yield put(Action.Creators.setUserProfile(result.data))
-        yield put(Action.Creators.updateState({
-            itLoggedIn:true
-        }))
+    try {
+        const result = yield call(API.getUserProfile)
+        if (result.data) {
+            yield put(Action.Creators.setUserProfile(result.data))
+            yield put(Action.Creators.updateState({
+                itLoggedIn: true
+            }))
+        }
+    } catch (e) {
+        toast(e.response.status);
     }
 }
 
 function* logoutWorker() {
     LocalStorage.accessToken.remove();
     yield put(Action.Creators.updateState({
-        user:null,
-        isLoggedIn:false
+        user: null,
+        isLoggedIn: false
     }))
 }
 
 function* editProfile({data}) {
-    const result = yield call(API.editUserProfile, data);
+    const result = yield call(API.editProfile, data);
     console.log("@@ result", result)
 }
 

@@ -25,11 +25,9 @@ const PhotoByIdContainer = ({match}) => {
 
     return (
         <Container>
-            {
-                console.log("@@ photoById[id]:", photoById[id])
-            }
-            <PhotoDetail photoById={photoById[id]}
-                         photoRelated={photoRelated[id]}
+            <PhotoDetail
+                photoById={photoById[id]}
+                photoRelated={photoRelated[id]}
             />
         </Container>
     )

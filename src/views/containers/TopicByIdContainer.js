@@ -5,6 +5,7 @@ import {Action as TopicsAction} from "../../redux/topics/redux";
 import {withRouter} from 'react-router-dom';
 import TopicDetail from "../components/Topics/TopicDetail";
 import MasonryList from "../components/PhotoList/MasonryList";
+import {ContentContainer} from "../components/Layout/Layout.Styled";
 
 const TopicByIdContainer = ({match}) => {
     const slug = match.params.slug;
@@ -20,8 +21,10 @@ const TopicByIdContainer = ({match}) => {
 
     return (
         <Container>
-            <TopicDetail/>
-            <MasonryList data={[]}/>
+            <ContentContainer>
+                <TopicDetail/>
+                <MasonryList data={[]}/>
+            </ContentContainer>
         </Container>
     )
 }

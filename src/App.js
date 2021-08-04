@@ -11,7 +11,7 @@ import PhotoById from "./views/pages/PhotoById";
 import User from "./views/pages/User";
 import Auth from "./views/pages/Auth";
 import {LocalStorage} from "./lib/localStorage";
-import {authActions} from "./redux/actinoCreators";
+import {authActions} from "./redux/actionCreators";
 import MyPage from "./views/pages/MyPage";
 
 function App() {
@@ -24,7 +24,6 @@ function App() {
         }
     }, [])
 
-
     return (
         <Container className={"App"}>
             <GlobalStyle/>
@@ -36,7 +35,7 @@ function App() {
                 <Route exact path={"/search/:category/:query"} component={Search}/>
                 <Route exact path={"/photos/:id"} component={PhotoById}/>
                 <Route exact path={"/topics/:slug"} component={TopicByID}/>
-                <Route exact path={"/topics/:slug"} component={MyPage}/>
+                <Route exact path={"/mypage"} component={MyPage}/>
                 <Route exact path={"/:username"} component={User}/>
             </Switch>
         </Container>
