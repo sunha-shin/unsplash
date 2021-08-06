@@ -19,18 +19,18 @@ const UserInfo = ({user}) => {
                 <h2 onClick={() => setShowPhotos(v => !v)}>
                     photos({user?.total_photos})
                 </h2>
-                {
-                    showPhotos &&
-                    <UserPhotosList>
-                        {
-                            user?.photos?.map?.((item) => (
-                                <div key={item?.id} className={'photoItem'}>
-                                    <img src={item?.urls?.small} alt=""/>
-                                </div>
-                            ))
-                        }
-                    </UserPhotosList>
-                }
+                {/*{*/}
+                {/*    showPhotos &&*/}
+                {/*    <UserPhotosList>*/}
+                {/*        {*/}
+                {/*            user?.photos?.map?.((item) => (*/}
+                {/*                <div key={item?.id} className={'photoItem'}>*/}
+                {/*                    <img src={item?.urls?.small} alt=""/>*/}
+                {/*                </div>*/}
+                {/*            ))*/}
+                {/*        }*/}
+                {/*    </UserPhotosList>*/}
+                {/*}*/}
             </UserPhotos>
             <Logout onClick={logout}>
                 Log out
