@@ -26,7 +26,7 @@ const Auth = () => {
                 data: {
                     client_id: CLIENT_ID,
                     client_secret: SECRET_KEY,
-                    redirect_uri: 'http://localhost:3000/auth',
+                    redirect_uri: 'https://sunhashin-project-unsplash.netlify.app/auth',
                     code: params.code,
                     grant_type: 'authorization_code'
                 },
