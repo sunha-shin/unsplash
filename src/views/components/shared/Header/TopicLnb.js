@@ -35,7 +35,7 @@ const TopicLnb = () => {
 }
 
 const Container = styled.div`
-
+  padding: 0 20px;
 `;
 
 const Nav = styled.div`
@@ -52,6 +52,7 @@ const NavItem = styled.div`
   color: #767676;
   cursor: pointer;
   border-bottom: 2px solid transparent;
+  font-size: 14px;
 
   &:hover,
   &.isActive {

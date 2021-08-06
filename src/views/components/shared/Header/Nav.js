@@ -37,6 +37,7 @@ const NavItem = styled.div`
   padding: 20px 12px;
   cursor: pointer;
   color: #767676;
+  font-size: 14px;
   &:hover {
     color: #111;
   }

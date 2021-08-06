@@ -112,6 +112,11 @@ const Line = styled.div`
 `;
 
 const StatusButton = styled(DefaultButton)`
-    
+  font-size: 14px;
+  padding: 4px 8px;
+  background: #c2ebd3;
+  border-radius: 3px;
+  text-transform: capitalize;
+  color: #111;
 `;
 export default StatusBox;

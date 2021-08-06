@@ -64,6 +64,7 @@ const NavItem = styled.div`
     justify-content: center;
     height: 56px;
     transition: 0.3s;
+    font-size: 14px;
 
     &:hover,
     &.isActive {

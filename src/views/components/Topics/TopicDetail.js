@@ -27,7 +27,7 @@ const TopicDetail = () => {
                     owners={owners}
                 />
                 <SubmitButton>
-                    Submit to&nbsp;<span>Current Events</span>
+                    Submit to&nbsp;<span>{title}</span>
                 </SubmitButton>
             </Status>
         </Container>
