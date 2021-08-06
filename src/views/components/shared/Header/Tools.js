@@ -21,7 +21,7 @@ function Tools() {
                         <ButtonLogin>
                             <a href={`https://unsplash.com/oauth/authorize?${qs.stringify({
                                 client_id: CLIENT_ID,
-                                redirect_uri: 'http://localhost:3000/auth',
+                                redirect_uri: 'https://sunhashin-project-unsplash.netlify.app/auth',
                                 response_type: 'code',
                                 scope: 'public read_user write_user'
                             })}`}>
