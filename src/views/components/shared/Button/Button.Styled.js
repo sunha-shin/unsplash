@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {ButtonOutlineEffect} from "../../../lib/styled";
+import {ButtonOutlineEffect} from "../../../../lib/styled";
 
 export const DefaultButton = styled.button`
   border: 1px solid transparent;

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import {ViewMoreIcon} from "../../../icons";
-import LocalData from "../../../data";
+import {ViewMoreIcon} from "../../../../icons";
+import LocalData from "../../../../data";
 import {DefaultButton} from "../Button/Button.Styled";
 
 
@@ -11,7 +11,7 @@ function Nav() {
         <Container>
             {
                 LocalData.navData.map((item) => (
-                    <NavItem>{item}</NavItem>
+                    <NavItem key={item}>{item}</NavItem>
                 ))
             }
             <NavItem><ViewMoreIcon/></NavItem>

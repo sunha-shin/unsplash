@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 import {DefaultButton, IconButton} from "../Button/Button.Styled";
-import {BarIcon} from "../../../lib/styled";
+import {BarIcon} from "../../../../lib/styled";
 import qs from 'qs';
-import {CLIENT_ID} from "../../../constants";
+import {CLIENT_ID} from "../../../../constants";
 import {useSelector} from "react-redux";
 import UserInfo from "../UserInfo";
-import {authActions} from "../../../redux/actionCreators";
+import {authActions} from "../../../../redux/actionCreators";
 
 function Tools() {
 

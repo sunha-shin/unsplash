@@ -1,6 +1,7 @@
 const initialState = {
     list: [],
-    topicById:{}
+    topicById: {},
+    photos: []
 }
 
 export const Action = {
@@ -10,6 +11,8 @@ export const Action = {
         SET_TOPICS: 'TOPICS/SET_TOPICS',
         GET_TOPIC_BY_ID: 'TOPICS/GET_TOPIC_BY_ID',
         SET_TOPIC_BY_ID: 'TOPICS/SET_TOPIC_BY_ID',
+        GET_TOPIC_PHOTOS: 'TOPICS/GET_TOPIC_PHOTOS',
+        SET_TOPIC_PHOTOS: 'TOPICS/SET_TOPIC_PHOTOS',
     },
 
     Creators: {
@@ -25,13 +28,22 @@ export const Action = {
             type: Action.Types.SET_TOPICS,
             payload
         }),
-        getTopicById:(slug, data) => ({
-            type:Action.Types.GET_TOPIC_BY_ID,
+        getTopicById: (slug, data) => ({
+            type: Action.Types.GET_TOPIC_BY_ID,
             slug,
             data
         }),
-        setTopicById:(data) => ({
-            type:Action.Types.SET_TOPIC_BY_ID,
+        setTopicById: (data) => ({
+            type: Action.Types.SET_TOPIC_BY_ID,
+            data
+        }),
+        getTopicPhotos: (slug, data) => ({
+            type: Action.Types.GET_TOPIC_PHOTOS,
+            slug,
+            data
+        }),
+        setTopicPhotos: (data) => ({
+            type: Action.Types.SET_TOPIC_PHOTOS,
             data
         })
     }
@@ -58,6 +70,12 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 topicById: action.data
+            }
+        }
+        case Action.Types.SET_TOPIC_PHOTOS : {
+            return {
+                ...state,
+                photos: [...state.photos, ...action.data]
             }
         }
 

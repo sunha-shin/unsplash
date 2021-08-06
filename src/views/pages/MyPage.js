@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {IconButton} from "../components/Button/Button.Styled";
+import {IconButton} from "../components/shared/Button/Button.Styled";
 import { useForm } from "react-hook-form";
 import {authActions} from "../../redux/actionCreators";
 

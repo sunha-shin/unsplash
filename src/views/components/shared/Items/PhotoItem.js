@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import cn from 'classnames';
-import {useIntersection} from '../../../hooks/useIntersection'
+import {useIntersection} from '../../../../hooks/useIntersection'
 import {useEffect, useState} from "react";
 
 const PhotoItem = ({item, onClick}) => {
@@ -9,8 +9,8 @@ const PhotoItem = ({item, onClick}) => {
     const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-        if(inView)
-        setIsActive(true);
+        if (inView)
+            setIsActive(true);
     }, [inView])
 
     const thumbStyle = {
@@ -19,13 +19,10 @@ const PhotoItem = ({item, onClick}) => {
     };
 
     return (
-        <Container onClick={onClick} className={cn({inView})} ref={itemRef} >
+        <Container onClick={onClick} className={cn({isActive})} ref={itemRef}>
             <Thumb style={thumbStyle}>
                 <img src={item.urls.regular} alt=""/>
             </Thumb>
-            <Desc>
-
-            </Desc>
         </Container>
     )
 }
@@ -35,13 +32,14 @@ const Container = styled.div`
   opacity: .3;
   transition: 0.5s;
   transform: translateY(40px);
-  &.inView {
+
+  &.isActive {
     opacity: 1;
     transform: none;
   }
 `;
 
-const Thumb = styled.div`    
+const Thumb = styled.div`
   img {
     object-fit: cover;
     position: absolute;
@@ -52,8 +50,5 @@ const Thumb = styled.div`
   }
 `;
 
-const Desc = styled.div`
-
-`;
 
 export default PhotoItem;

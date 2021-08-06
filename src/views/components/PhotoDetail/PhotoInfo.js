@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
-import UserProfile from "../UserProfile";
-import {IconButton} from "../Button/Button.Styled";
+import UserProfile from "../shared/UserProfile";
+import {IconButton} from "../shared/Button/Button.Styled";
 import moment from "moment";
 import {
     HeartIcon,

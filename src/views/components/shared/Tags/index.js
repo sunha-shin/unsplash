@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {navigate} from "../../../lib/history";
+import {navigate} from "../../../../lib/history";
 
 const Tags = ({data}) => {
     return (

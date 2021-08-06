@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 import PhotoItem from "../Items/PhotoItem";
-import {composePhotosGroups} from "../../../lib/common";
+import {composePhotosGroups} from "../../../../lib/common";
 import {useDispatch} from "react-redux";
-import {Action} from "../../../redux/photos/redux";
+import {Action} from "../../../../redux/photos/redux";
 import IosLoader from "../Loader/IosLoader";
 import InfiniteScroll from "react-infinite-scroll-component";
 

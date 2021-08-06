@@ -12,7 +12,6 @@ const Auth = () => {
 
     const location = useLocation();
     const params = qs.parse(location.search, {ignoreQueryPrefix: true});
-    console.log("@@ params", params)
 
     useEffect(() => {
         getToken();

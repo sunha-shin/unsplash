@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components';
-import Gnb from "../components/Header/Gnb";
-import TopicLnb from "../components/Header/TopicLnb";
+import Gnb from "../components/shared/Header/Gnb";
+import TopicLnb from "../components/shared/Header/TopicLnb";
 import {useDispatch} from "react-redux";
 import {Action as TopicsAction} from "../../redux/topics/redux";
 import {CLIENT_ID} from "../../constants";

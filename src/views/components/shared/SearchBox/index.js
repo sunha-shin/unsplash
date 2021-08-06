@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import {useHistory} from 'react-router-dom';
-import {SearchIcon} from "../../../icons";
+import {SearchIcon} from "../../../../icons";
 import cn from "classnames";
 
 function SearchBox({shape}) {

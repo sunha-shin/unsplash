@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {CollectionsIcon, PhotosIcon, UsersIcon} from "../../../icons";
+import {CollectionsIcon, PhotosIcon, UsersIcon} from "../../../../icons";
 import {Link, withRouter} from "react-router-dom";
 import cn from 'classnames'
 

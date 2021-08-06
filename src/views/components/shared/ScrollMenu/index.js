@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import styled from 'styled-components';
-import {ArrowLeftIcon, ArrowRightIcon} from "../../../icons";
+import {ArrowLeftIcon, ArrowRightIcon} from "../../../../icons";
 import {DefaultButton} from "../Button/Button.Styled";
 import cn from 'classnames';
 

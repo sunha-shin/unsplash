@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import ScrollMenu from "../ScrollMenu";
+import ScrollMenu from "../shared/ScrollMenu";
 import {navigate} from "../../../lib/history";
 
 const SearchHead = ({query, related_searches}) => {

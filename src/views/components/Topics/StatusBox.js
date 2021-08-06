@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
-import {DefaultButton} from "../Button/Button.Styled";
+import {DefaultButton} from "../shared/Button/Button.Styled";
 import {ContributionsIcon, CuratorIcon, StatusIcon, TopContributorsIcon} from "../../../icons";
-import ProfileImage from "../ProfileImage";
+import ProfileImage from "../shared/ProfileImage";
 import {abbreviateNumber} from "../../../lib/common";
 
 const StatusBox = ({total_photos, status, top_contributors, owners}) => {
@@ -49,7 +49,7 @@ const StatusBox = ({total_photos, status, top_contributors, owners}) => {
                 <TopContributors>
                     {
                         top_contributors.map((item) => (
-                            <ProfileImage url={item?.profile_image?.small} size={16}/>
+                            <ProfileImage key={item.id} url={item?.profile_image?.small} size={16}/>
                         ))
                     }
                 </TopContributors>

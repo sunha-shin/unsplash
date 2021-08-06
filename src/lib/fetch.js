@@ -29,7 +29,7 @@ export const request = (method, url, data) => {
 
         const token = LocalStorage.accessToken.get();
         axiosInstance.defaults.headers.common['Authorization'] =
-            token ? `Bearer ${token}` : `Client_ID ${CLIENT_ID}`;
+            token ? `Bearer ${token}` : `Client-ID ${CLIENT_ID}`;
 
         return axiosInstance(config);
 

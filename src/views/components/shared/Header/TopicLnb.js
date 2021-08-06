@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {useSelector} from "react-redux";
 import {useLocation} from 'react-router-dom';
 import ScrollMenu from "../ScrollMenu";
-import {navigate} from "../../../lib/history";
+import {navigate} from "../../../../lib/history";
 import cn from 'classnames'
 
 // Topic local navigation bar

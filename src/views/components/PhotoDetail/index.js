@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 import PhotoInfo from "./PhotoInfo";
 import Section from "./Section";
-import MasonryList from "../PhotoList/MasonryList";
-import GridList from "../PhotoList/GridList";
-import CollectionItem from "../Items/CollectionItem";
-import Tags from "../Tags";
-import {ContentContainer} from "../Layout/Layout.Styled";
+import MasonryList from "../shared/PhotoList/MasonryList";
+import GridList from "../shared/PhotoList/GridList";
+import CollectionItem from "../shared/Items/CollectionItem";
+import Tags from "../shared/Tags";
+import {ContentContainer} from "../shared/Layout/Layout.Styled";
 
 const PhotoDetail = ({photoById, photoRelated}) => {
 

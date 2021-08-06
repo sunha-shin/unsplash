@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import styled from 'styled-components';
 import {IconButton} from "../Button/Button.Styled";
-import {authActions} from "../../../redux/actionCreators";
+import {authActions} from "../../../../redux/actionCreators";
 import ProfileImage from "../ProfileImage";
 
 const UserInfo = ({user}) => {

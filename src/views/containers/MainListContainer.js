@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import {useDispatch, useSelector} from "react-redux";
 import {Action} from "../../redux/photos/redux";
 import {CLIENT_ID} from "../../constants";
-import {ContentContainer} from "../components/Layout/Layout.Styled";
-import MasonryList from "../components/PhotoList/MasonryList";
+import {ContentContainer} from "../components/shared/Layout/Layout.Styled";
+import MasonryList from "../components/shared/PhotoList/MasonryList";
 
 const MainListContainer = () => {
 

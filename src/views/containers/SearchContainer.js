@@ -1,16 +1,16 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components';
 import {Route, withRouter} from "react-router-dom";
-import MasonryList from "../components/PhotoList/MasonryList";
+import MasonryList from "../components/shared/PhotoList/MasonryList";
 import {useDispatch, useSelector} from "react-redux";
 import {Action} from "../../redux/search/redux";
 import {CLIENT_ID} from "../../constants";
-import SearchLnb from "../components/Header/SearchLnb";
+import SearchLnb from "../components/shared/Header/SearchLnb";
 import SearchHead from "../components/Search/SearchHead";
-import {ContentContainer} from "../components/Layout/Layout.Styled";
-import GridList from "../components/PhotoList/GridList";
-import CollectionItem from "../components/Items/CollectionItem";
-import UserItem from "../components/Items/UserItem";
+import {ContentContainer} from "../components/shared/Layout/Layout.Styled";
+import GridList from "../components/shared/PhotoList/GridList";
+import CollectionItem from "../components/shared/Items/CollectionItem";
+import UserItem from "../components/shared/Items/UserItem";
 
 const SearchContainer = ({match}) => {
 

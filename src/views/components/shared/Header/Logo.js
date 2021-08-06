@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import {LogoIcon} from "../../../icons";
-import {navigate} from "../../../lib/history";
+import {LogoIcon} from "../../../../icons";
+import {navigate} from "../../../../lib/history";
 
 function Logo() {
 

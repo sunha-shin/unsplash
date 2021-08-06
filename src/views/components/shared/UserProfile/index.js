@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import {TextEllipsis} from "../../../lib/styled";
+import {TextEllipsis} from "../../../../lib/styled";
 
 const UserProfile = ({profileImage, name, username, for_hire}) => {
 
