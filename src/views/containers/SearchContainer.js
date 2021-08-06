@@ -86,7 +86,6 @@ const SearchContainer = ({match}) => {
                               next={nextPhotos}
                     />
                 </Route>
-
             </ContentContainer>
         </Container>
     )

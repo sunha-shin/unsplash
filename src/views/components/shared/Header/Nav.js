@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import {ViewMoreIcon} from "../../../../icons";
 import LocalData from "../../../../data";
-import {DefaultButton} from "../Button/Button.Styled";
-
 
 function Nav() {
 
@@ -45,10 +43,6 @@ const NavItem = styled.div`
   svg {
     fill: #767676;    
   }
-`;
-
-const Login = styled(DefaultButton)`
-    
 `;
 
 export default Nav;

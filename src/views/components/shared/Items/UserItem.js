@@ -19,7 +19,7 @@ const UserItem = ({item}) => {
     };
 
     return (
-        <Container onClick={onClick}>
+        <Container>
             <Head>
                 <UserProfile>
                     <Avatar>

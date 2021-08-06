@@ -7,6 +7,7 @@ import axios from "axios";
 import {navigate} from "../../lib/history";
 import {authActions} from "../../redux/actionCreators";
 import {LocalStorage} from "../../lib/localStorage";
+import IosLoader from "../components/shared/Loader/IosLoader";
 
 const Auth = () => {
 
@@ -46,13 +47,14 @@ const Auth = () => {
 
     return (
         <Container>
-            auth page
+            <IosLoader/>
         </Container>
     )
 }
 
 const Container = styled.div`
-
+  display: flex;
+  justify-content: center;
 `;
 
 export default Auth;

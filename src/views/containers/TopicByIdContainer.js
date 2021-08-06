@@ -1,12 +1,10 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {Action as TopicsAction} from "../../redux/topics/redux";
 import {withRouter} from 'react-router-dom';
 import TopicDetail from "../components/Topics/TopicDetail";
-import MasonryList from "../components/shared/PhotoList/MasonryList";
 import {ContentContainer} from "../components/shared/Layout/Layout.Styled";
-import TopicPhotos from "../components/Topics/TopicPhotos";
 import TopicPhotosContainer from "./TopicPhotosContainer";
 
 const TopicByIdContainer = ({match}) => {

@@ -6,7 +6,6 @@ import qs from 'qs';
 import {CLIENT_ID} from "../../../../constants";
 import {useSelector} from "react-redux";
 import UserInfo from "../UserInfo";
-import {authActions} from "../../../../redux/actionCreators";
 
 function Tools() {
 

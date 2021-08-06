@@ -31,14 +31,10 @@ const PhotoInfo = ({data}) => {
             username,
             for_hire
         },
-        views,
-        downloads,
-        created_at,
         location: {
             title
         },
         description,
-        alt_description
     } = data;
 
     const imageBoxStyle = {

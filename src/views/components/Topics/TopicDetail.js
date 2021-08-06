@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import {useSelector} from "react-redux";
 import IosLoader from "../shared/Loader/IosLoader";
-import {ContentContainer} from "../shared/Layout/Layout.Styled";
 import StatusBox from "./StatusBox";
 import {IconButton} from "../shared/Button/Button.Styled";
 

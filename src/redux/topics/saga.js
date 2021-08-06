@@ -1,7 +1,6 @@
 import {call, all, takeLatest, put} from "redux-saga/effects";
 import API from "../../api";
 import {Action} from "./redux";
-import {Action as PhotoAction} from "../photos/redux";
 import _ from 'lodash';
 
 function* getTopicsWorker({payload}) {  //destructuring -- action.payload
