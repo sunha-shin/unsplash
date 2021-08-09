@@ -1,5 +1,5 @@
 # :love_letter: Unsplash - Preview
-![HolidayCardMaker](https://sunhashin-project-unsplash.netlify.app)
+![Unsplash](https://sunhashin-project-unsplash.netlify.app/)
 
 <br>
 
@@ -21,5 +21,4 @@ The website generates 17 billion+ photos, allowing users to search royalty-free 
 - JavaScript (ES6+)
 - Styled components / SCSS
 - HTML5 / CSS3
-- Libraries
- - react-router-dom, axios, classNames, history, lodash, moment, qs, react-hook-from, etc.
+- Libraries : react-router-dom, axios, classNames, history, lodash, moment, qs, react-hook-from, etc.
