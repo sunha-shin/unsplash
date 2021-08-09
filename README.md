@@ -1,8 +1,6 @@
-# :camera: Unsplash - Portfolio URL
-<https://sunhashin-project-unsplash.netlify.app/>
-![hi](https://drive.google.com/uc?id=16LCWFkBTlvX1MOGbRkQ8TRXGbFji0jWk)
-
-[![텍스트](https://drive.google.com/uc?id=16LCWFkBTlvX1MOGbRkQ8TRXGbFji0jWk)](https://sunhashin-project-unsplash.netlify.app/)
+# :camera: Unsplash
+[![Sunha Shin's project - Unsplash](https://drive.google.com/uc?id=16LCWFkBTlvX1MOGbRkQ8TRXGbFji0jWk)](https://sunhashin-project-unsplash.netlify.app/)
+Portfolio URL : <https://sunhashin-project-unsplash.netlify.app/>
 
 ## Overview
 The website generates 17 billion+ photos, allowing users to search royalty-free or stock images
