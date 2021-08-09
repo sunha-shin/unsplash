@@ -21,4 +21,4 @@ The website generates 17 billion+ photos, allowing users to search royalty-free 
 - JavaScript (ES6+)
 - Styled components / SCSS
 - HTML5 / CSS3
-- Libraries : react-router-dom, axios, classNames, history, lodash, moment, qs, react-hook-from, etc.
+- Libraries : react-router-dom, axios, classnames, history, lodash, moment, qs, react-hook-from, etc.
