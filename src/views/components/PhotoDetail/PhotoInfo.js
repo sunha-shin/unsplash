@@ -72,7 +72,7 @@ const PhotoInfo = ({data}) => {
             <Body className={cn({zoomIn})}>
                 <Image onClick={() => setZoomIn(v => !v)}>
                     <ImageBox style={imageBoxStyle}>
-                        <img src={data.urls?.full}
+                        <img src={data.urls?.regular}
                              alt={data.alt_description || ""}/>
                     </ImageBox>
                     <ButtonZoom className={"btn-zoom"}>
@@ -82,6 +82,7 @@ const PhotoInfo = ({data}) => {
                     </ButtonZoom>
                 </Image>
             </Body>
+
             <Detail>
                 <CountHead className={'CountHead'}>
                     <Count className={'Count'}>
@@ -183,7 +184,8 @@ const ImageBox = styled.div`
 const Image = styled.div`
   position: relative;
   max-width: 70%;
-  width: 100%;
+  width: 30%;
+  height: auto;
   cursor: zoom-in;
 
   &:hover {
@@ -197,6 +199,7 @@ const Image = styled.div`
   }
 
   .zoomIn & {
+    width: 100%;
     max-width: 100% !important;
     cursor: zoom-out;
   }

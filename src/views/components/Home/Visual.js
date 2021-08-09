@@ -14,14 +14,14 @@ const Visual = () => {
                     Powered by creators everywhere.
                 </p>
                 <SearchBox shape={"square"}/>
-                <Trending>
-                    <span>Trending : </span>
-                    {
-                        LocalData.trending.map((item, i) => (
-                            <span key={i} className="highlight">{item} &nbsp;</span>
-                        ))
-                    }
-                </Trending>
+                {/*<Trending>*/}
+                {/*    <span>Trending : </span>*/}
+                {/*    {*/}
+                {/*        LocalData.trending.map((item, i) => (*/}
+                {/*            <span key={i} className="highlight">{item} &nbsp;</span>*/}
+                {/*        ))*/}
+                {/*    }*/}
+                {/*</Trending>*/}
             </Contents>
         </Container>
     )
@@ -51,7 +51,6 @@ const Contents = styled.div`
   p {
     color: #fff;
     font-size: 18px;
-    font-weight: 500;
     line-height: 1.5;
     margin-bottom: 40px;
 

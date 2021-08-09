@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components';
 import {TextEllipsis} from "../../../../lib/styled";
 
-const UserProfile = ({profileImage, name, username, for_hire}) => {
+const UserProfile = ({profileImage, name, username, for_hire, color}) => {
 
     return (
         <Container>
                 <Avatar>
                     <img src={profileImage} alt={`Avatar of user ${name}`}/>
                 </Avatar>
-                <Info>
+                <Info color={color}>
                     <div className="name">{name}</div>
                     <div className="username">
                         {
@@ -46,7 +46,7 @@ const Info = styled.div`
 
   .name {
     font-size: 15px;
-    color: #111;
+    color: ${(props) => props.color || '#111'};
     font-weight: bold;
     margin-bottom: 2px;
     ${TextEllipsis};
@@ -54,7 +54,7 @@ const Info = styled.div`
 
   .username {
     font-size: 11px;
-    color: #767676;
+    color: ${(props) => props.color || '#767676'};
   }
 `;
 
