@@ -5,6 +5,14 @@ Project URL : <https://sunhashin-project-unsplash.netlify.app/>
 ## Overview
 The website generates 17 billion+ photos, allowing users to search royalty-free or stock images
 
+## User story (Funtionalities)
+1. Photo Search : As a user who want to find photos, I want to search royalty free or stocks images so that I can view list of photos.
+2. View photo detail<br>
+  2-1. When I click a specific photo, I see detail information of photos such as created date, number of download and view count.<br>
+  2-2. I also see related photos, photo collections and related tags<br>
+3. View topic related photo : I see related photos when I click topics under the search bar
+4. Login : If I have an actual Unsplash's id and password, I login this site with no sign-up
+
 ## Features
 * Designed an intuitive folder structure that decouples business logic from UI
 * Fetched Unsplash’s API by dispatching Actions and saved data to a Redux store
