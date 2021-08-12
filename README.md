@@ -5,7 +5,7 @@ Project URL : <https://sunhashin-project-unsplash.netlify.app/>
 ## Overview
 The website generates 17 billion+ photos, allowing users to search royalty-free or stock images
 
-## User story (Funtionalities)
+## User story
 1. Photo Search : As a user who wantS to find photos, I want to be able to search royalty free or stocks images so that I can view A list of photos.
 2. View photo detail<br>
   2-1. When I click a specific photo, I see detailED information of photos such as created date, number of downloads and view count.<br>
