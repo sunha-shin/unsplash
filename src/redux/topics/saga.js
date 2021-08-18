@@ -8,7 +8,6 @@ function* getTopicsWorker({payload}) {  //destructuring -- action.payload
     if (_.isEmpty(result.data)) {
         throw new Error("No data")
     }
-    ;
     yield put(Action.Creators.setTopics(result.data));
 }
 
@@ -18,6 +17,7 @@ function* getTopicByIdWorker({slug, data}) {  //destructuring -- action.payload
         throw new Error("No data")
     }
     yield put(Action.Creators.setTopicById(result.data));
+    yield put(Action.Creators.getTopicPhotos(slug));
 }
 
 function* getTopicPhotos({slug, data}) {

@@ -75,7 +75,11 @@ const reducer = (state = initialState, action) => {
         case Action.Types.SET_TOPIC_PHOTOS : {
             return {
                 ...state,
-                photos: [...state.photos, ...action.data]
+                // photos: {
+                //     // ...state.photos,
+                //     ...action.data
+                // }
+                photos: [...action.data, ...state.photos]
             }
         }
 

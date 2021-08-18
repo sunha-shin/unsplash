@@ -1,10 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components';
 import MasonryList from "../shared/PhotoList/MasonryList";
 import {useSelector} from "react-redux";
 import _ from "lodash";
 import IosLoader from "../shared/Loader/IosLoader";
 import InfiniteScroll from "react-infinite-scroll-component";
+import {withRouter} from "react-router-dom";
+import {topicsActions} from "../../../redux/actionCreators";
 
 const TopicPhotos = ({next}) => {
 
@@ -18,11 +20,9 @@ const TopicPhotos = ({next}) => {
                 dataLength={topicPhotos.length}
                 next={next}
                 hasMore={true}
-                loader={<IosLoader/>}
-            >
+                loader={<IosLoader/>}>
                 <MasonryList data={topicPhotos}/>
             </InfiniteScroll>
-
         </Container>
     )
 }
@@ -31,4 +31,4 @@ const Container = styled.div`
 
 `;
 
-export default TopicPhotos;
+export default withRouter(TopicPhotos);

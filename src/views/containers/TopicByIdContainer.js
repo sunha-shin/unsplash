@@ -6,17 +6,17 @@ import {withRouter} from 'react-router-dom';
 import TopicDetail from "../components/Topics/TopicDetail";
 import {ContentContainer} from "../components/shared/Layout/Layout.Styled";
 import TopicPhotosContainer from "./TopicPhotosContainer";
+import {topicsActions} from "../../redux/actionCreators";
 
 const TopicByIdContainer = ({match}) => {
     const slug = match.params.slug;
-    const dispatch = useDispatch();
 
     useEffect(() => {
         getTopicById();
     }, [slug])
 
     const getTopicById = () => {
-        dispatch(TopicsAction.Creators.getTopicById(slug))
+        topicsActions.getTopicById(slug);
     }
 
     return (

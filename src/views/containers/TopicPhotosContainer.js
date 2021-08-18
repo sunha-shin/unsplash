@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import TopicPhotos from "../components/Topics/TopicPhotos";
 import {topicsActions} from "../../redux/actionCreators";
 import {withRouter} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const TopicPhotosContainer = ({match}) => {
 
@@ -16,6 +17,10 @@ const TopicPhotosContainer = ({match}) => {
     useEffect(() => {
         topicsActions.getTopicPhotos(slug, {page})
     }, [page])
+
+    // useEffect(() => {
+    //     topicsActions.getTopicPhotos(slug, {page})
+    // }, [slug])
 
     return (
         <Container>
