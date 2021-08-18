@@ -79,7 +79,7 @@ const reducer = (state = initialState, action) => {
                 //     // ...state.photos,
                 //     ...action.data
                 // }
-                photos: [...action.data, ...state.photos]
+                photos: [...action.data]
             }
         }
 
