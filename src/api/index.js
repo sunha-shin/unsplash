@@ -8,7 +8,6 @@ const API = {
     getTopicPhotos:(slug, data) => request('get', `/topics/${slug}/photos`, data),
     getTopicById:(slug, data) => request('get', `/topics/${slug}`, data),
     searchPhotos:(data) => request('get', `/search`, data),
-
     getUserProfile:() => request('get', `/me`),
     editProfile:(data) => request('put', `/me`, data),
 }

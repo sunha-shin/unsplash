@@ -9,8 +9,8 @@ function Logo() {
         <Container onClick={() => navigate('/')}>
             <LogoIcon/>
             <Text>
-                <span className="title">Unsplash</span>
-                <span className="desc">Photos for everyone</span>
+                <span className="title">Summer's Project</span>
+                <span className="desc">Unsplash</span>
             </Text>
         </Container>
     )

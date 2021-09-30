@@ -19,7 +19,7 @@ const MasonryList = ({data = [], next, hasMore = true}) => {
 
     return (
         <InfiniteScroll
-            dataLength={data.length} //This is important field to render the next data
+            dataLength={data.length}
             next={next}
             hasMore={!!next && hasMore}
             loader={<IosLoader/>}

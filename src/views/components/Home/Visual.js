@@ -7,10 +7,10 @@ const Visual = () => {
     return (
         <Container>
             <Contents>
-                <h1>Unsplash</h1>
+                <h1>Summer's Personal Project</h1>
                 <p>
-                    The internet’s source of <span className="highlight">freely-usable images.</span> <br/>
-                    Powered by creators everywhere.
+                    Unsplash Website (Clone)<br/>
+                    Search <span className="highlight">freely-usable images.</span>
                 </p>
                 <SearchBox shape={"square"}/>
                 {/*<Trending>*/}

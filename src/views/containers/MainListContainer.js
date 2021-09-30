@@ -30,8 +30,6 @@ const MainListContainer = () => {
         setPage(p => p + 1)
     };
 
-    console.log("@@ list", list)
-    
     return (
         <Container>
             <ContentContainer>
