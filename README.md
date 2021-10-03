@@ -158,14 +158,42 @@ I imported this component to four pages and it looks like this :
 
 
 - **UI/business logic decoupling**<br>
-I divided folders in src by function, and what I made much of the time is the **views** folder. I organized the views into three folders; components, containers and pages. <br>
-
-![ui decouples](https://user-images.githubusercontent.com/47774611/135766138-4bbf34ad-cc46-4200-959c-78660c3a6067.png)
+I divided folders in src by function, and what I made much of the time is the **views** folder. I organized the views into three folders; components, containers and pages.<br>
+![ui decouples](https://user-images.githubusercontent.com/47774611/135766138-4bbf34ad-cc46-4200-959c-78660c3a6067.png)<br>
 
   * **components**: This is a folder to save components. Those components can be used globally or on specific pages such as Home.js, Search.js and etc.
   * **containers**: The containers folder is a file that gets data by making asynchronous calls. Container.js files inherit these data to certain components.
-  * **pages**: The pages folder is for page files. Each page file calls one or more container files.
+  * **pages**: The pages folder is for page files. Each page file calls one or more container files.<br>  
+![views pages](https://user-images.githubusercontent.com/47774611/135766468-a963c1c6-e3ab-4301-b2b6-7b5f5fd8a5ff.png)
 
+Here is how I imported containers to Home.js page file.
+```
+// views/containers/MainListContainer.js
+
+const MainListContainer = () => {
+// ... here are asyncronous calls logic
+return (
+  <Container>
+    <ContentContainer>
+      <MasonryList data={list} next={next} />
+    </ContentContainer>
+  </Container>
+)}
+```
+```
+// views/pages/Home.js
+
+function Home() {    
+ 
+return (
+	<Container>
+	    <Visual/>
+	    <MainListContainer/>
+			// import the container
+	</Container>
+  )
+}
+```
 
 
 
