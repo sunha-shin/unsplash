@@ -7,7 +7,7 @@ const Visual = () => {
     return (
         <Container>
             <Contents>
-                <h1>Summer's Personal Project</h1>
+                <h1>Summer(Sunha)'s Personal Project</h1>
                 <p>
                     Unsplash Website (Clone)<br/>
                     Search <span className="highlight">freely-usable images.</span>
