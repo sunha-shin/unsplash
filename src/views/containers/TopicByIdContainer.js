@@ -13,7 +13,7 @@ const TopicByIdContainer = ({match}) => {
 
     useEffect(() => {
         getTopicById();
-    // eslint-disable-next-line no-use-before-define
+    // eslint-disable-next-line no-use-before-define, react-hooks/exhaustive-deps
     }, [slug])
 
     useEffect(() => {
