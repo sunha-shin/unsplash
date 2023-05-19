@@ -14,7 +14,7 @@ const TopicByIdContainer = ({match}) => {
     useEffect(() => {
         getTopicById();
     // eslint-disable-next-line no-use-before-define
-    }, [getTopicById, slug])
+    }, [slug])
 
     useEffect(() => {
         topicsActions.getTopicPhotos(slug, {page})
