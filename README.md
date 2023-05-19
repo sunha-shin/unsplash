@@ -1,4 +1,4 @@
-## :camera: Summer's Personal Project - Unsplash website (Clone)
+## :camera: Sunha's Personal Project - Unsplash website (Clone)
 ![Main picture](https://user-images.githubusercontent.com/47774611/135763661-330fe240-35d9-4ac8-b7e1-44558a22ea65.png)
 
 The purpose of this website is for users to be able to search a catalogue of royalty-free stock photos and view them. This website is the ultimate search engine for images.
