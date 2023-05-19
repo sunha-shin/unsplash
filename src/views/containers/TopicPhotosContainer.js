@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import TopicPhotos from "../components/Topics/TopicPhotos";
 import {topicsActions} from "../../redux/actionCreators";
 import {withRouter} from "react-router-dom";
-import {useSelector} from "react-redux";
 
 const TopicPhotosContainer = ({match}) => {
 
@@ -16,6 +15,7 @@ const TopicPhotosContainer = ({match}) => {
 
     useEffect(() => {
         topicsActions.getTopicPhotos(slug, {page})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page])
 
     // useEffect(() => {

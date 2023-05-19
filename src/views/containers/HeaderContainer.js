@@ -13,6 +13,7 @@ const HeaderContainer = () => {
 
     useEffect(() => {
         getTopics()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const getTopics = () => {

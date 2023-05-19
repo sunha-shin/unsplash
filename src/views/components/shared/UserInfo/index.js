@@ -6,6 +6,7 @@ import ProfileImage from "../ProfileImage";
 
 const UserInfo = ({user}) => {
 
+    // eslint-disable-next-line no-unused-vars
     const [showPhotos, setShowPhotos] = useState();
     const logout = () => {
         authActions.logout();
@@ -65,27 +66,27 @@ const UserPhotos = styled.div`
   }
 `;
 
-const UserPhotosList = styled.div`
-  position: absolute;
-  right: 0;
-  min-width: 200px;
-  top: 100%;
-  background: #fff;
-  display: flex;
-  padding: 30px;
+// const UserPhotosList = styled.div`
+//   position: absolute;
+//   right: 0;
+//   min-width: 200px;
+//   top: 100%;
+//   background: #fff;
+//   display: flex;
+//   padding: 30px;
 
-  .photoItem {
-    width: 80px;
-    height: 120px;
-    margin: 0 4px;
+//   .photoItem {
+//     width: 80px;
+//     height: 120px;
+//     margin: 0 4px;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-`;
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//     }
+//   }
+// `;
 
 const Logout = styled(IconButton)`
 

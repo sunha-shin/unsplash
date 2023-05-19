@@ -17,6 +17,7 @@ const PhotoByIdContainer = ({match}) => {
 
     useEffect(() => {
         getPhotoDetail();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const getPhotoDetail = () => {

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components';
 import MasonryList from "../shared/PhotoList/MasonryList";
 import {useSelector} from "react-redux";
@@ -6,7 +6,6 @@ import _ from "lodash";
 import IosLoader from "../shared/Loader/IosLoader";
 import InfiniteScroll from "react-infinite-scroll-component";
 import {withRouter} from "react-router-dom";
-import {topicsActions} from "../../../redux/actionCreators";
 
 const TopicPhotos = ({next}) => {
 

@@ -60,10 +60,10 @@ const Contents = styled.div`
   }
 `;
 
-const Trending = styled.div`
-  margin-top: 15px;
-  color: #fff;
-`;
+// const Trending = styled.div`
+//   margin-top: 15px;
+//   color: #fff;
+// `;
 
 
 export default Visual;

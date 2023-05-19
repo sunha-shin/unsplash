@@ -23,6 +23,7 @@ const SearchContainer = ({match}) => {
 
     useEffect(() => {
         searchPhotos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [query])
 
     useEffect(() => {
@@ -33,6 +34,7 @@ const SearchContainer = ({match}) => {
         if (page > 1) {
             searchPhotosMore();
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page])
 
     const searchPhotos = () => {

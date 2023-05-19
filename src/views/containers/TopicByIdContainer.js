@@ -1,26 +1,27 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components';
-import {useDispatch} from "react-redux";
-import {Action as TopicsAction} from "../../redux/topics/redux";
 import {withRouter} from 'react-router-dom';
 import TopicDetail from "../components/Topics/TopicDetail";
 import {ContentContainer} from "../components/shared/Layout/Layout.Styled";
 import TopicPhotosContainer from "./TopicPhotosContainer";
 import {topicsActions} from "../../redux/actionCreators";
-import TopicPhotos from "../components/Topics/TopicPhotos";
 
 const TopicByIdContainer = ({match}) => {
     const slug = match.params.slug;
+    // eslint-disable-next-line no-unused-vars
     const [page, setPage] = useState(1);
 
     useEffect(() => {
         getTopicById();
-    }, [slug])
+    // eslint-disable-next-line no-use-before-define
+    }, [getTopicById, slug])
 
     useEffect(() => {
         topicsActions.getTopicPhotos(slug, {page})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page])
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const getTopicById = () => {
         topicsActions.getTopicById(slug);
     }

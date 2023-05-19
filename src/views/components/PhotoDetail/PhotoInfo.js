@@ -31,9 +31,6 @@ const PhotoInfo = ({data}) => {
             username,
             for_hire
         },
-        location: {
-            title
-        },
         description,
     } = data;
 

@@ -6,6 +6,7 @@ import {authActions} from "../../redux/actionCreators";
 
 const MyPage = () => {
 
+    // eslint-disable-next-line no-unused-vars
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         authActions.editProfile(data);

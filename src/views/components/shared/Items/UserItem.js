@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {DefaultButton, IconButton} from "../Button/Button.Styled";
 import {FollowIcon} from "../../../../icons";
 import {ButtonOutlineEffect, TextEllipsis} from "../../../../lib/styled";
-import {navigate} from "../../../../lib/history";
+
 
 const UserItem = ({item}) => {
 
@@ -13,11 +13,7 @@ const UserItem = ({item}) => {
         profile_image,
         photos
     } = item;
-
-    const onClick = () => {
-        navigate(`/@${username}`)
-    };
-
+    
     return (
         <Container>
             <Head>
