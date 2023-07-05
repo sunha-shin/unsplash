@@ -38,10 +38,32 @@ const SearchContainer = ({match}) => {
     const searchPhotos = () => {
         dispatch(Action.Creators.searchPhotos({
             query,
-            per_page:9,
+            per_page: 9,
             // client_id: CLIENT_ID
         }))
     };
+
+    // useEffect(() => {
+    //     searchPhotos();
+    // }, [query])
+    //
+    // useEffect(() => {
+    //     setPage(1);
+    // }, [category])
+    //
+    // useEffect(() => {
+    //     if (page > 1) {
+    //         searchPhotosMore();
+    //     }
+    // }, [page])
+    //
+    // const searchPhotos = () => {
+    //     dispatch(Action.Creators.searchPhotos({
+    //         query,
+    //         per_page:9,
+    //         // client_id: CLIENT_ID
+    //     }))
+    // };
 
     const searchPhotosMore = () => {
         dispatch(Action.Creators.searchPhotosMore({
